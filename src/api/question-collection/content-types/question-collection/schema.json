@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "question_collections",
+  "info": {
+    "singularName": "question-collection",
+    "pluralName": "question-collections",
+    "displayName": "QuestionCollection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application-question.application-question",
+      "mappedBy": "collection"
+    }
+  }
+}

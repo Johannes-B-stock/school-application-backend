@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "answers",
+  "info": {
+    "singularName": "answer",
+    "pluralName": "answers",
+    "displayName": "Answer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "answer": {
+      "type": "text"
+    },
+    "school_application": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::school-application.school-application",
+      "inversedBy": "answers"
+    },
+    "question": {
+      "type": "richtext"
+    }
+  }
+}

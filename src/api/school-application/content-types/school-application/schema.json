@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "school_applications",
+  "info": {
+    "singularName": "school-application",
+    "pluralName": "school-applications",
+    "displayName": "SchoolApplication",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "school": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::school.school",
+      "inversedBy": "applications"
+    },
+    "isSubmitted": {
+      "type": "boolean"
+    },
+    "isApproved": {
+      "type": "boolean"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "school_applications"
+    },
+    "answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::answer.answer",
+      "mappedBy": "school_application"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "created",
+        "submitted",
+        "review",
+        "approved",
+        "revoked"
+      ],
+      "default": "created"
+    }
+  }
+}
