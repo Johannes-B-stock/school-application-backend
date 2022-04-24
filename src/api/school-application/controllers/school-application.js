@@ -42,8 +42,7 @@ module.exports = createCoreController(
           user: { id: ctx.state.user.id },
         },
       };
-      const applications = await this.find({ query: query });
-      console.log(applications);
+      const applications = await this.find({ ...ctx, query: query });
       if (!applications.data || !applications.data.length) {
         return ctx.unauthorized(`You can't update this entry`);
       }
