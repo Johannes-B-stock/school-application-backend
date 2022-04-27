@@ -1726,6 +1726,14 @@
     "@strapi/utils" "4.1.7"
     sendmail "^1.6.1"
 
+"@strapi/provider-email-sendmail@^4.1.8":
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/@strapi/provider-email-sendmail/-/provider-email-sendmail-4.1.8.tgz#cfbacf0f0fd714e665e4d639f21d6ba4000f9d08"
+  integrity sha512-0O3g2qkM3ciXEkt9rpXHRcwC2Z8IUEGWX6mDESIPYoKgPF7Wovki1IYL3ORNLh66hzVEdnzbKcTLOxUjJ4yINw==
+  dependencies:
+    "@strapi/utils" "4.1.8"
+    sendmail "^1.6.1"
+
 "@strapi/provider-upload-cloudinary@^4.1.7":
   version "4.1.8"
   resolved "https://registry.yarnpkg.com/@strapi/provider-upload-cloudinary/-/provider-upload-cloudinary-4.1.8.tgz#eaaca301cf71416cda6ca87ec7b363f7373eb83f"
