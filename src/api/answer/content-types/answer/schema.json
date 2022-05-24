@@ -4,7 +4,8 @@
   "info": {
     "singularName": "answer",
     "pluralName": "answers",
-    "displayName": "Answer"
+    "displayName": "Answer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +22,9 @@
       "inversedBy": "answers"
     },
     "question": {
-      "type": "richtext"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::question.question"
     }
   }
 }

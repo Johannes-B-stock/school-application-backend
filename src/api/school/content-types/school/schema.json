@@ -70,10 +70,22 @@
       "target": "api::school-application.school-application",
       "mappedBy": "school"
     },
-    "question_collection": {
+    "applicationQuestions": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::question-collection.question-collection"
+    },
+    "preApplicationText": {
+      "type": "richtext"
+    },
+    "referenceQuestions": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::question-collection.question-collection"
+    },
+    "secondarySchool": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

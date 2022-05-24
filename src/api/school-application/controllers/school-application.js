@@ -59,7 +59,7 @@ module.exports = createCoreController(
           user: { id: ctx.state.user.id },
         },
       };
-      const events = await this.find({ query: query });
+      const events = await this.find({ ...ctx, query: query });
       if (!events.data || !events.data.length) {
         return ctx.unauthorized(`You can't delete this entry`);
       }
@@ -79,10 +79,6 @@ module.exports = createCoreController(
         return ctx.badRequest();
       }
       return data;
-      //   console.log(data);
-      //   const sanitizedEntity = await this.sanitizeOutput(data, ctx);
-      //   console.log(sanitizedEntity);
-      //   return this.transformResponse(sanitizedEntity);
     },
   })
 );

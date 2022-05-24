@@ -18,12 +18,6 @@
       "target": "api::school.school",
       "inversedBy": "applications"
     },
-    "isSubmitted": {
-      "type": "boolean"
-    },
-    "isApproved": {
-      "type": "boolean"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
@@ -41,11 +35,25 @@
       "enum": [
         "created",
         "submitted",
-        "review",
+        "reviewed",
         "approved",
         "revoked"
       ],
       "default": "created"
+    },
+    "step": {
+      "type": "integer",
+      "default": 0
+    },
+    "reference1": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reference.reference"
+    },
+    "reference2": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reference.reference"
     }
   }
 }
