@@ -57,6 +57,15 @@ module.exports = (plugin) => {
     ctx.body = users.map((user) => sanitizeOutput(user));
   };
 
+  plugin.controllers.user.findOne = async (ctx) => {
+    const user = await strapi.entityService.findOne(
+      "plugin::users-permissions.user",
+      ctx.params.id,
+      ctx.query
+    );
+
+    ctx.body = user;
+  };
   // CUSTOM ROUTES
 
   // Add the custom route

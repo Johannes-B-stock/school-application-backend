@@ -37,11 +37,15 @@ module.exports = createCoreController(
       let entity;
       const { id } = ctx.params;
       const query = {
+        ...ctx.query,
         filters: {
+          ...ctx.query?.filters,
           id: id,
-          user: { id: ctx.state.user.id },
         },
       };
+      if (ctx.state.user.role.name !== "SchoolAdmin") {
+        query.filters.user = { id: ctx.state.user.id };
+      }
       const applications = await this.find({ ...ctx, query: query });
       if (!applications.data || !applications.data.length) {
         return ctx.unauthorized(`You can't update this entry`);
@@ -53,12 +57,16 @@ module.exports = createCoreController(
     // Delete a user application----------------------------------------
     async delete(ctx) {
       const { id } = ctx.params;
-      const query = {
-        filters: {
-          id: id,
-          user: { id: ctx.state.user.id },
-        },
-      };
+      let query = ctx.query;
+      if (ctx.state.user.role.name !== "SchoolAdmin") {
+        query = {
+          filters: {
+            id: id,
+            user: { id: ctx.state.user.id },
+          },
+        };
+      }
+
       const events = await this.find({ ...ctx, query: query });
       if (!events.data || !events.data.length) {
         return ctx.unauthorized(`You can't delete this entry`);
@@ -69,12 +77,20 @@ module.exports = createCoreController(
     // Get applications that belong to logged in user----------------------------------------
     async me(ctx) {
       const user = ctx.state.user;
+      let query = ctx.query;
       if (!user) {
         return ctx.badRequest(null, [
           { messages: [{ id: "No authorization header was found" }] },
         ]);
       }
-      const data = await this.find(ctx);
+      query = {
+        ...query,
+        filters: {
+          ...query.filters,
+          user: { id: ctx.state.user.id },
+        },
+      };
+      const data = await this.find({ ...ctx, query });
       if (!data) {
         return ctx.badRequest();
       }

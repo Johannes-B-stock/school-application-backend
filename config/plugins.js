@@ -29,8 +29,8 @@ module.exports = ({ env }) => ({
     config: {
       provider: "sendmail",
       settings: {
-        defaultFrom: "johannesbirkenstock@gmail.com",
-        defaultReplyTo: "johannesbirkenstock@gmail.com",
+        defaultFrom: env("DEFAULT_EMAIL_FROM"),
+        defaultReplyTo: env("DEFAULT_EMAIL_REPLYTO"),
       },
     },
   },
