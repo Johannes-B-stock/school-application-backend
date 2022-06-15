@@ -51,7 +51,11 @@ module.exports = (plugin) => {
   plugin.controllers.user.find = async (ctx) => {
     const users = await strapi.entityService.findMany(
       "plugin::users-permissions.user",
-      { ...ctx.params, populate: ["role"] }
+      {
+        ...ctx,
+        filters: ctx.query.filters,
+        populate: [...ctx.query?.populate, "role"],
+      }
     );
 
     ctx.body = users.map((user) => sanitizeOutput(user));
