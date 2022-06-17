@@ -1,0 +1,15 @@
+diff --git a/node_modules/@strapi/plugin-users-permissions/server/controllers/auth.js b/node_modules/@strapi/plugin-users-permissions/server/controllers/auth.js
+index 7e159cf..df6ee06 100644
+--- a/node_modules/@strapi/plugin-users-permissions/server/controllers/auth.js
++++ b/node_modules/@strapi/plugin-users-permissions/server/controllers/auth.js
+@@ -368,6 +368,10 @@ module.exports = {
+         throw new ApplicationError('Username already taken');
+       } else if (_.includes(err.message, 'email')) {
+         throw new ApplicationError('Email already taken');
++      } else if (_.includes(err.message, 'attribute must be unique')){
++        throw new ApplicationError('Username already taken');
++      } else if (err instanceof ValidationError){
++        throw new ApplicationError(_.upperFirst(err.message));
+       } else {
+         strapi.log.error(err);
+         throw new ApplicationError('An error occurred during account creation');
