@@ -1,0 +1,219 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::page-content.page-content",
+  "value": {
+    "uid": "api::page-content.page-content",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "navbar_brand": {
+        "edit": {
+          "label": "navbar_brand",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "navbar_brand",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "showcase": {
+        "edit": {
+          "label": "showcase",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "showcase",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "showcaseTitle": {
+        "edit": {
+          "label": "showcaseTitle",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "showcaseTitle",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "showcaseSubtitle": {
+        "edit": {
+          "label": "showcaseSubtitle",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "showcaseSubtitle",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "contact": {
+        "edit": {
+          "label": "contact",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "contact",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "facebookLink": {
+        "edit": {
+          "label": "facebookLink",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "facebookLink",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "twitterLink": {
+        "edit": {
+          "label": "twitterLink",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "twitterLink",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "instagramLink": {
+        "edit": {
+          "label": "instagramLink",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "instagramLink",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "navbar_brand",
+        "createdAt",
+        "updatedAt"
+      ],
+      "edit": [
+        [
+          {
+            "name": "navbar_brand",
+            "size": 6
+          },
+          {
+            "name": "showcase",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "showcaseTitle",
+            "size": 6
+          },
+          {
+            "name": "showcaseSubtitle",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "contact",
+            "size": 6
+          },
+          {
+            "name": "facebookLink",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "twitterLink",
+            "size": 6
+          },
+          {
+            "name": "instagramLink",
+            "size": 6
+          }
+        ]
+      ],
+      "editRelations": []
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

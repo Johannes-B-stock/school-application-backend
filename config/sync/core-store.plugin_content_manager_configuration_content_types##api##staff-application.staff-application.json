@@ -1,0 +1,228 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::staff-application.staff-application",
+  "value": {
+    "uid": "api::staff-application.staff-application",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "arriveAt": {
+        "edit": {
+          "label": "arriveAt",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "arriveAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "stayUntil": {
+        "edit": {
+          "label": "stayUntil",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "stayUntil",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "answers": {
+        "edit": {
+          "label": "answers",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "id"
+        },
+        "list": {
+          "label": "answers",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "state": {
+        "edit": {
+          "label": "state",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "state",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "submittedAt": {
+        "edit": {
+          "label": "submittedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "submittedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "reference1": {
+        "edit": {
+          "label": "reference1",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "reference1",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "reference2": {
+        "edit": {
+          "label": "reference2",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "reference2",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "step": {
+        "edit": {
+          "label": "step",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "step",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "arriveAt",
+        "stayUntil",
+        "answers"
+      ],
+      "edit": [
+        [
+          {
+            "name": "arriveAt",
+            "size": 4
+          },
+          {
+            "name": "stayUntil",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "state",
+            "size": 6
+          },
+          {
+            "name": "submittedAt",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "step",
+            "size": 4
+          }
+        ]
+      ],
+      "editRelations": [
+        "answers",
+        "user",
+        "reference1",
+        "reference2"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

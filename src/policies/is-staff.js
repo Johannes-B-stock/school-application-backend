@@ -1,4 +1,4 @@
-module.exports = (policyContext, config, { strapi }) => {
+module.exports = (policyContext) => {
   const roleName = policyContext.state.user.role.name.toLowerCase();
   if (
     roleName === "schooladmin" ||

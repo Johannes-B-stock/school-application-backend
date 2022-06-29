@@ -25,6 +25,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::question.question"
+    },
+    "staff_application": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::staff-application.staff-application",
+      "inversedBy": "answers"
     }
   }
 }

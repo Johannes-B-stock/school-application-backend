@@ -113,6 +113,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::address.address"
+    },
+    "staff_applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::staff-application.staff-application",
+      "mappedBy": "user"
     }
   }
 }

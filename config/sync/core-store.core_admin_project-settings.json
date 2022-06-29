@@ -1,0 +1,18 @@
+{
+  "key": "core_admin_project-settings",
+  "value": {
+    "menuLogo": {
+      "name": "university.png",
+      "hash": "university_2375317639",
+      "url": "https://res.cloudinary.com/johnny-boy/image/upload/v1655980621/university_2375317639.png",
+      "width": 512,
+      "height": 512,
+      "ext": ".png",
+      "size": 8.73,
+      "provider": "cloudinary"
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

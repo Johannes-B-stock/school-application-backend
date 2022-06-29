@@ -1,0 +1,115 @@
+{
+  "name": "Student",
+  "description": "This role belongs to all users that are students and therefore belong to a school",
+  "type": "student",
+  "permissions": [
+    {
+      "action": "api::about-page.about-page.find"
+    },
+    {
+      "action": "api::address.address.create"
+    },
+    {
+      "action": "api::address.address.find"
+    },
+    {
+      "action": "api::address.address.findOne"
+    },
+    {
+      "action": "api::address.address.update"
+    },
+    {
+      "action": "api::answer.answer.create"
+    },
+    {
+      "action": "api::answer.answer.find"
+    },
+    {
+      "action": "api::answer.answer.findOne"
+    },
+    {
+      "action": "api::answer.answer.update"
+    },
+    {
+      "action": "api::impressum.impressum.find"
+    },
+    {
+      "action": "api::page-content.page-content.find"
+    },
+    {
+      "action": "api::privacy.privacy.find"
+    },
+    {
+      "action": "api::question-collection.question-collection.find"
+    },
+    {
+      "action": "api::question-collection.question-collection.findOne"
+    },
+    {
+      "action": "api::school-application.school-application.create"
+    },
+    {
+      "action": "api::school-application.school-application.me"
+    },
+    {
+      "action": "api::school.school.find"
+    },
+    {
+      "action": "api::school.school.findOne"
+    },
+    {
+      "action": "api::staff-application-setting.staff-application-setting.find"
+    },
+    {
+      "action": "api::staff-application.staff-application.create"
+    },
+    {
+      "action": "api::staff-application.staff-application.delete"
+    },
+    {
+      "action": "api::staff-application.staff-application.me"
+    },
+    {
+      "action": "api::staff-application.staff-application.update"
+    },
+    {
+      "action": "plugin::upload.content-api.upload"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.auth.emailConfirmation"
+    },
+    {
+      "action": "plugin::users-permissions.auth.forgotPassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.resetPassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.sendEmailConfirmation"
+    },
+    {
+      "action": "plugin::users-permissions.permissions.getPermissions"
+    },
+    {
+      "action": "plugin::users-permissions.user.changePassword"
+    },
+    {
+      "action": "plugin::users-permissions.user.find"
+    },
+    {
+      "action": "plugin::users-permissions.user.findOne"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    },
+    {
+      "action": "plugin::users-permissions.user.update"
+    },
+    {
+      "action": "plugin::users-permissions.user.updateMe"
+    }
+  ]
+}

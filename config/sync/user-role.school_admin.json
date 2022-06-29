@@ -1,0 +1,226 @@
+{
+  "name": "SchoolAdmin",
+  "description": "This role allows to create & manage schools",
+  "type": "school_admin",
+  "permissions": [
+    {
+      "action": "api::about-page.about-page.find"
+    },
+    {
+      "action": "api::address.address.create"
+    },
+    {
+      "action": "api::address.address.delete"
+    },
+    {
+      "action": "api::address.address.find"
+    },
+    {
+      "action": "api::address.address.findOne"
+    },
+    {
+      "action": "api::address.address.update"
+    },
+    {
+      "action": "api::answer.answer.create"
+    },
+    {
+      "action": "api::answer.answer.delete"
+    },
+    {
+      "action": "api::answer.answer.find"
+    },
+    {
+      "action": "api::answer.answer.findOne"
+    },
+    {
+      "action": "api::answer.answer.update"
+    },
+    {
+      "action": "api::impressum.impressum.find"
+    },
+    {
+      "action": "api::page-content.page-content.find"
+    },
+    {
+      "action": "api::privacy.privacy.find"
+    },
+    {
+      "action": "api::question-collection.question-collection.create"
+    },
+    {
+      "action": "api::question-collection.question-collection.delete"
+    },
+    {
+      "action": "api::question-collection.question-collection.find"
+    },
+    {
+      "action": "api::question-collection.question-collection.findOne"
+    },
+    {
+      "action": "api::question-collection.question-collection.update"
+    },
+    {
+      "action": "api::question-type.question-type.create"
+    },
+    {
+      "action": "api::question-type.question-type.find"
+    },
+    {
+      "action": "api::question-type.question-type.findOne"
+    },
+    {
+      "action": "api::question-type.question-type.update"
+    },
+    {
+      "action": "api::question.question.create"
+    },
+    {
+      "action": "api::question.question.find"
+    },
+    {
+      "action": "api::question.question.findOne"
+    },
+    {
+      "action": "api::question.question.update"
+    },
+    {
+      "action": "api::reference.reference.create"
+    },
+    {
+      "action": "api::reference.reference.delete"
+    },
+    {
+      "action": "api::reference.reference.find"
+    },
+    {
+      "action": "api::reference.reference.findOne"
+    },
+    {
+      "action": "api::reference.reference.update"
+    },
+    {
+      "action": "api::school-application.school-application.create"
+    },
+    {
+      "action": "api::school-application.school-application.delete"
+    },
+    {
+      "action": "api::school-application.school-application.find"
+    },
+    {
+      "action": "api::school-application.school-application.findOne"
+    },
+    {
+      "action": "api::school-application.school-application.me"
+    },
+    {
+      "action": "api::school-application.school-application.update"
+    },
+    {
+      "action": "api::school.school.addStudent"
+    },
+    {
+      "action": "api::school.school.create"
+    },
+    {
+      "action": "api::school.school.createLocalization"
+    },
+    {
+      "action": "api::school.school.delete"
+    },
+    {
+      "action": "api::school.school.find"
+    },
+    {
+      "action": "api::school.school.findOne"
+    },
+    {
+      "action": "api::school.school.update"
+    },
+    {
+      "action": "api::staff-application-setting.staff-application-setting.createLocalization"
+    },
+    {
+      "action": "api::staff-application-setting.staff-application-setting.find"
+    },
+    {
+      "action": "api::staff-application-setting.staff-application-setting.update"
+    },
+    {
+      "action": "api::staff-application.staff-application.create"
+    },
+    {
+      "action": "api::staff-application.staff-application.delete"
+    },
+    {
+      "action": "api::staff-application.staff-application.find"
+    },
+    {
+      "action": "api::staff-application.staff-application.findOne"
+    },
+    {
+      "action": "api::staff-application.staff-application.me"
+    },
+    {
+      "action": "api::staff-application.staff-application.update"
+    },
+    {
+      "action": "plugin::email.email.send"
+    },
+    {
+      "action": "plugin::upload.content-api.find"
+    },
+    {
+      "action": "plugin::upload.content-api.findOne"
+    },
+    {
+      "action": "plugin::upload.content-api.upload"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.auth.emailConfirmation"
+    },
+    {
+      "action": "plugin::users-permissions.auth.forgotPassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.resetPassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.sendEmailConfirmation"
+    },
+    {
+      "action": "plugin::users-permissions.permissions.getPermissions"
+    },
+    {
+      "action": "plugin::users-permissions.role.createRole"
+    },
+    {
+      "action": "plugin::users-permissions.user.changePassword"
+    },
+    {
+      "action": "plugin::users-permissions.user.count"
+    },
+    {
+      "action": "plugin::users-permissions.user.find"
+    },
+    {
+      "action": "plugin::users-permissions.user.findOne"
+    },
+    {
+      "action": "plugin::users-permissions.user.getStaff"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    },
+    {
+      "action": "plugin::users-permissions.user.update"
+    },
+    {
+      "action": "plugin::users-permissions.user.updateMe"
+    }
+  ]
+}

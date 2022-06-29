@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "staff_applications",
+  "info": {
+    "singularName": "staff-application",
+    "pluralName": "staff-applications",
+    "displayName": "StaffApplication",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "arriveAt": {
+      "type": "date"
+    },
+    "stayUntil": {
+      "type": "date"
+    },
+    "answers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::answer.answer",
+      "mappedBy": "staff_application"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "created",
+        "submitted",
+        "reviewed",
+        "approved",
+        "revoked"
+      ],
+      "default": "created"
+    },
+    "submittedAt": {
+      "type": "datetime"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "staff_applications"
+    },
+    "reference1": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reference.reference"
+    },
+    "reference2": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reference.reference"
+    },
+    "step": {
+      "type": "integer",
+      "default": 0,
+      "required": false,
+      "max": 4,
+      "min": 0
+    }
+  }
+}

@@ -14,6 +14,29 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  "duplicate-button": true,
+  "import-export-entries": {
+    enabled: true,
+  },
+  deepl: {
+    enabled: true,
+    config: {
+      // your DeepL API key
+      apiKey: "9e90f76d-aac3-a8ed-df00-5bae66fae0a0:fx",
+      // whether to use the free or paid api, default true
+      freeApi: true,
+      // Which field types are translated (default string, text, richtext, components and dynamiczones)
+      translatedFieldTypes: [
+        "string",
+        "text",
+        "richtext",
+        "component",
+        "dynamiczone",
+      ],
+      // If relations should be translated (default true)
+      translateRelations: true,
+    },
+  },
   slugify: {
     enabled: true,
     config: {
@@ -23,6 +46,11 @@ module.exports = ({ env }) => ({
           references: "name",
         },
       },
+    },
+  },
+  "users-permissions": {
+    config: {
+      jwtSecret: env("JWT_SECRET"),
     },
   },
   email: {

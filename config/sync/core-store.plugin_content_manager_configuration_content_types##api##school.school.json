@@ -1,0 +1,434 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::school.school",
+  "value": {
+    "uid": "api::school.school",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "name",
+      "defaultSortBy": "name",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "name": {
+        "edit": {
+          "label": "name",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "name",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "slug": {
+        "edit": {
+          "label": "slug",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "slug",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "description": {
+        "edit": {
+          "label": "description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "isPublic": {
+        "edit": {
+          "label": "isPublic",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "isPublic",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "acceptingStudents": {
+        "edit": {
+          "label": "acceptingStudents",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "acceptingStudents",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "schoolFee": {
+        "edit": {
+          "label": "schoolFee",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "schoolFee",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "applicationFee": {
+        "edit": {
+          "label": "applicationFee",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "applicationFee",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "startDate": {
+        "edit": {
+          "label": "startDate",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "startDate",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "endDate": {
+        "edit": {
+          "label": "endDate",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "endDate",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "image": {
+        "edit": {
+          "label": "image",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "image",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "students": {
+        "edit": {
+          "label": "students",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "students",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "staff": {
+        "edit": {
+          "label": "staff",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "staff",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "applications": {
+        "edit": {
+          "label": "applications",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "id"
+        },
+        "list": {
+          "label": "applications",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "applicationQuestions": {
+        "edit": {
+          "label": "applicationQuestions",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "applicationQuestions",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "preApplicationText": {
+        "edit": {
+          "label": "preApplicationText",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "preApplicationText",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "referenceQuestions": {
+        "edit": {
+          "label": "referenceQuestions",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "referenceQuestions",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "secondarySchool": {
+        "edit": {
+          "label": "secondarySchool",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "secondarySchool",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "contactEmail": {
+        "edit": {
+          "label": "contactEmail",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "contactEmail",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "stripeAppFeeId": {
+        "edit": {
+          "label": "stripeAppFeeId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "stripeAppFeeId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "stripeSchoolFeeId": {
+        "edit": {
+          "label": "stripeSchoolFeeId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "stripeSchoolFeeId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "name",
+        "slug",
+        "description"
+      ],
+      "edit": [
+        [
+          {
+            "name": "name",
+            "size": 6
+          },
+          {
+            "name": "slug",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "description",
+            "size": 6
+          },
+          {
+            "name": "isPublic",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "acceptingStudents",
+            "size": 4
+          },
+          {
+            "name": "schoolFee",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "applicationFee",
+            "size": 6
+          },
+          {
+            "name": "startDate",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "endDate",
+            "size": 4
+          },
+          {
+            "name": "image",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "preApplicationText",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "secondarySchool",
+            "size": 4
+          },
+          {
+            "name": "contactEmail",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "stripeAppFeeId",
+            "size": 4
+          },
+          {
+            "name": "stripeSchoolFeeId",
+            "size": 4
+          }
+        ]
+      ],
+      "editRelations": [
+        "students",
+        "staff",
+        "applications",
+        "applicationQuestions",
+        "referenceQuestions"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

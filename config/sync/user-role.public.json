@@ -1,0 +1,91 @@
+{
+  "name": "Public",
+  "description": "Default role given to unauthenticated user.",
+  "type": "public",
+  "permissions": [
+    {
+      "action": "api::about-page.about-page.find"
+    },
+    {
+      "action": "api::answer.answer.find"
+    },
+    {
+      "action": "api::answer.answer.findOne"
+    },
+    {
+      "action": "api::answer.answer.update"
+    },
+    {
+      "action": "api::impressum.impressum.find"
+    },
+    {
+      "action": "api::page-content.page-content.find"
+    },
+    {
+      "action": "api::privacy.privacy.find"
+    },
+    {
+      "action": "api::question.question.find"
+    },
+    {
+      "action": "api::question.question.findOne"
+    },
+    {
+      "action": "api::reference.reference.find"
+    },
+    {
+      "action": "api::reference.reference.findOne"
+    },
+    {
+      "action": "api::reference.reference.update"
+    },
+    {
+      "action": "api::school-application.school-application.find"
+    },
+    {
+      "action": "api::school-application.school-application.findOne"
+    },
+    {
+      "action": "api::school.school.create"
+    },
+    {
+      "action": "api::school.school.delete"
+    },
+    {
+      "action": "api::school.school.find"
+    },
+    {
+      "action": "api::school.school.findOne"
+    },
+    {
+      "action": "api::school.school.update"
+    },
+    {
+      "action": "api::staff-application-setting.staff-application-setting.find"
+    },
+    {
+      "action": "plugin::users-permissions.auth.callback"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.auth.emailConfirmation"
+    },
+    {
+      "action": "plugin::users-permissions.auth.forgotPassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.register"
+    },
+    {
+      "action": "plugin::users-permissions.auth.resetPassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.sendEmailConfirmation"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    }
+  ]
+}

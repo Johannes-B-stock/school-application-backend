@@ -9,6 +9,13 @@ module.exports = [
           "connect-src": ["'self'", "https:"],
           "img-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
           "media-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
+          "script-src": [
+            "'self'",
+            "editor.unlayer.com",
+            "cdn.jsdelivr.net",
+            "blob:",
+          ],
+          "frame-src": ["'self'", "editor.unlayer.com"],
           upgradeInsecureRequests: null,
         },
       },

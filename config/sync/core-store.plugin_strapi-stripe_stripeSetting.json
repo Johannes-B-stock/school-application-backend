@@ -1,0 +1,16 @@
+{
+  "key": "plugin_strapi-stripe_stripeSetting",
+  "value": {
+    "isLiveMode": false,
+    "stripeLivePubKey": "pk_live_51LDq88KH98JmqHSR4TwKQx0bmVvlVtWHFut5iBz20O2o5wf69DD8JTL2YTrSGLvdeGINDS4bhqW8qRpNQDKKMsxq00XPf1xRQI",
+    "stripeLiveSecKey": "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",
+    "stripeTestPubKey": "pk_test_51LDq88KH98JmqHSR8yDftgXHA0uq26pfmiYdtmnmGKSJ3xbdgoyaIoP5vUtiaYGmcEXYFvGKxwRQBRNp3UECLgvC00u9VcJwEB",
+    "stripeTestSecKey": "sk_test_51LDq88KH98JmqHSRqVGe1jwe9XIOD96b23p1XoXzqECE5l847oLNNMFuooFXrN1xIDiUX0fHbldbWHSoQ2iK2t7h0078hNlZJZ",
+    "checkoutSuccessUrl": "http://localhost:3000/payment/success",
+    "checkoutCancelUrl": "http://localhost:3000/payment/failed",
+    "currency": "eur"
+  },
+  "type": "object",
+  "environment": "development",
+  "tag": null
+}
