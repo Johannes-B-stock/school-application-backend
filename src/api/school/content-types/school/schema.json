@@ -171,6 +171,27 @@
         }
       },
       "type": "integer"
+    },
+    "currency": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "euro",
+        "dollar",
+        "pound"
+      ]
+    },
+    "detailedDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
     }
   }
 }

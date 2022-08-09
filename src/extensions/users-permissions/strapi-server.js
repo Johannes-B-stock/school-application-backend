@@ -107,16 +107,33 @@ module.exports = (plugin) => {
         },
       },
     };
-    const users = await strapi.entityService.findMany(
+    console.log(ctx.query);
+    const { results, pagination } = await strapi.entityService.findPage(
       "plugin::users-permissions.user",
       {
-        ...ctx,
+        ...ctx.query,
         filters: { ...staffFilter, ...ctx.query.filters },
         populate: [...ctx.query?.populate, "role"],
       }
     );
 
-    ctx.body = users.map((user) => sanitizeOutput(user));
+    // strapi.service("plugin::users-permissions.user").find({
+    //   ...ctx,
+    //   filters: { ...staffFilter, ...ctx.query.filters },
+    //   populate: [...ctx.query?.populate, "role"],
+    // });
+    // const users = await strapi.entityService.findMany(
+    //   "plugin::users-permissions.user",
+    //   {
+    //     ...ctx,
+    //     filters: { ...staffFilter, ...ctx.query.filters },
+    //     populate: [...ctx.query?.populate, "role"],
+    //   }
+    // );
+    // const { results, pagination } = await strapi.service('api::blog.blog').find(query)
+    const users = results.map((user) => sanitizeOutput(user));
+    console.log(users);
+    ctx.body = { users, pagination };
   };
 
   plugin.controllers.user.findOne = async (ctx) => {

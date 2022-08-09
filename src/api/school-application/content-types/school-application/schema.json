@@ -54,6 +54,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::reference.reference"
+    },
+    "applicationFeePaid": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }

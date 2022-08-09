@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_details",
+  "info": {
+    "singularName": "user-detail",
+    "pluralName": "user-details",
+    "displayName": "UserDetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "phone": {
+      "type": "string"
+    },
+    "mobile_phone": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "native_language": {
+      "type": "string"
+    },
+    "language2": {
+      "type": "string"
+    },
+    "language3": {
+      "type": "string"
+    },
+    "language2_skills": {
+      "type": "string"
+    },
+    "language3_skills": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "details"
+    }
+  }
+}

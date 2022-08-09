@@ -119,6 +119,15 @@
       "relation": "oneToMany",
       "target": "api::staff-application.staff-application",
       "mappedBy": "user"
+    },
+    "details": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-detail.user-detail",
+      "inversedBy": "user"
+    },
+    "middle_names": {
+      "type": "string"
     }
   }
 }

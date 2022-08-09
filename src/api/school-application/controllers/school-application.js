@@ -27,26 +27,13 @@ module.exports = createCoreController(
     },
     // Create application that belongs to user----------------------------------------
     async create(ctx) {
-      let entity;
       ctx.request.body.data.user = ctx.state.user;
-      entity = await super.create(ctx);
-      return entity;
+      return await super.create(ctx);
     },
     // Update a user application----------------------------------------
     async update(ctx) {
       let entity;
-      const { id } = ctx.params;
-      const query = {
-        ...ctx.query,
-        filters: {
-          ...ctx.query?.filters,
-          id: id,
-        },
-      };
-      if (ctx.state.user.role.name !== "SchoolAdmin") {
-        query.filters.user = { id: ctx.state.user.id };
-      }
-      const applications = await this.find({ ...ctx, query: query });
+      const applications = await this.find(ctx);
       if (!applications.data || !applications.data.length) {
         return ctx.unauthorized(`You can't update this entry`);
       }
