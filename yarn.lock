@@ -1768,13 +1768,21 @@
     request "^2.83.0"
     url-join "4.0.1"
 
-"@strapi/provider-email-sendgrid@^4.3.2":
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/@strapi/provider-email-sendgrid/-/provider-email-sendgrid-4.3.2.tgz#dfc17aa8ee34e4d25ef3d285081ab4405cc5113c"
-  integrity sha512-KR3fjt6HQBdj3F08mCkaM0rA/Efq+RoBR9SoDrmhGakh2fqvy8R+7Ys8aWt0UPtHHGrBXoTyvJPnDjLWVLjTbQ==
+"@strapi/provider-email-nodemailer@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@strapi/provider-email-nodemailer/-/provider-email-nodemailer-4.2.0.tgz#670abfd299568b5c12e5868a0082104fd945df05"
+  integrity sha512-0O9HSyPPjtfuVz3DORIyrMFOgijvWjDmXGQMHLgIgnSr5HmqSdSCc5vlYwoq4TX22rwABzFuWaUMRTskGrEB1A==
+  dependencies:
+    lodash "4.17.21"
+    nodemailer "6.7.3"
+
+"@strapi/provider-email-sendgrid@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@strapi/provider-email-sendgrid/-/provider-email-sendgrid-4.2.0.tgz#c255a6c55d1187e82948b7c6888efcbb7a25bca5"
+  integrity sha512-immnIGV2ymL6uDeR+H9EfH4bjTPDUAF/ZjP0GX47pO5O7xkXj0TlXKwSeywKqOH2o6TAmgl0X3I5KqYMzmH2Xw==
   dependencies:
     "@sendgrid/mail" "7.4.7"
-    "@strapi/utils" "4.3.2"
+    "@strapi/utils" "4.2.0"
 
 "@strapi/provider-email-sendmail@4.2.0":
   version "4.2.0"
@@ -1866,17 +1874,6 @@
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.24.0"
     http-errors "1.8.0"
-    lodash "4.17.21"
-    yup "0.32.9"
-
-"@strapi/utils@4.3.2":
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.3.2.tgz#df4ae10bff89d3fd13495a3bde10da16f6fd4597"
-  integrity sha512-7MsXcGFSbKsKUFiegzy1kL6PHTAWyJ0kxfT4xAywkXMN7GOkA3x9ld0Ds4+a3MBohA2ZOiVj7Nil3IF7tQwdpQ==
-  dependencies:
-    "@sindresorhus/slugify" "1.1.0"
-    date-fns "2.28.0"
-    http-errors "1.8.1"
     lodash "4.17.21"
     yup "0.32.9"
 
@@ -4044,11 +4041,6 @@ date-fns@2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.24.0.tgz#7d86dc0d93c87b76b63d213b4413337cfd1c105d"
   integrity sha512-6ujwvwgPID6zbI0o7UbURi2vlLDR9uP26+tW6Lg+Ji3w7dd0i3DOcjcClLjLPranT60SSEFBwdSyYwn/ZkPIuw==
-
-date-fns@2.28.0:
-  version "2.28.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.28.0.tgz#9570d656f5fc13143e50c975a3b6bbeb46cd08b2"
-  integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
 
 dayjs@^1.10.7:
   version "1.11.3"
@@ -7935,10 +7927,10 @@ nodemailer-shared@1.1.0:
   dependencies:
     nodemailer-fetch "1.6.0"
 
-nodemailer@6.6.1:
-  version "6.6.1"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.6.1.tgz#2a05fbf205b897d71bf43884167b5d4d3bd01b99"
-  integrity sha512-1xzFN3gqv+/qJ6YRyxBxfTYstLNt0FCtZaFRvf4Sg9wxNGWbwFmGXVpfSi6ThGK6aRxAo+KjHtYSW8NvCsNSAg==
+nodemailer@6.7.3:
+  version "6.7.3"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.3.tgz#b73f9a81b9c8fa8acb4ea14b608f5e725ea8e018"
+  integrity sha512-KUdDsspqx89sD4UUyUKzdlUOper3hRkDVkrKh/89G+d9WKsU5ox51NWS4tB1XR5dPUdR4SP0E3molyEfOvSa3g==
 
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
@@ -10379,14 +10371,6 @@ strapi-plugin-slugify@^2.2.2:
   integrity sha512-Kra7uXZUM+70m02Qoa/su+HxBxqrFhxyLt/B90kd4LwnEjebXA6nsAsa0dxafMunQfqWQey7JOV+qToB4a3FXg==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
-
-strapi-provider-email-nodemailer@^3.6.10:
-  version "3.6.10"
-  resolved "https://registry.yarnpkg.com/strapi-provider-email-nodemailer/-/strapi-provider-email-nodemailer-3.6.10.tgz#30390b1851ffbc5efeb6463491f4fa37d852bfa7"
-  integrity sha512-Ra1Ek/GE0Pg6K3NIJ1ZF5a2wIKxjQ0oSshsC0AYmNo047FFlId+z2lJLGvCRIEPTP+T5EVHllWitiWCpWwbHbA==
-  dependencies:
-    lodash "4.17.21"
-    nodemailer "6.6.1"
 
 strapi-stripe@^2.1.3:
   version "2.1.3"
