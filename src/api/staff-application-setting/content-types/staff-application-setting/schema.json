@@ -60,6 +60,11 @@
           "localized": true
         }
       }
+    },
+    "referenceQuestions": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::question-collection.question-collection"
     }
   }
 }
