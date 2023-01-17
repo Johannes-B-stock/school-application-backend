@@ -3,8 +3,9 @@
 /**
  *  school-application controller
  */
-
+const utils = require("@strapi/utils");
 const { createCoreController } = require("@strapi/strapi").factories;
+const { NotFoundError } = utils.errors;
 
 module.exports = createCoreController(
   "api::school-application.school-application",
@@ -12,7 +13,7 @@ module.exports = createCoreController(
     // find school applications
     async find(ctx) {
       let query = ctx.query;
-      if (ctx.state.user.role.name !== "SchoolAdmin") {
+      if (isNotAdmin(ctx)) {
         query = {
           ...query,
           filters: {
@@ -22,30 +23,76 @@ module.exports = createCoreController(
         };
       }
 
-      const objects = await super.find({ ...ctx, query });
-      return objects;
+      const applications = await super.find({ ...ctx, query });
+      return applications;
     },
+
+    async findOne(ctx) {
+      let query = ctx.query;
+      if (isNotAdmin(ctx)) {
+        query = {
+          ...query,
+          filters: {
+            ...query.filters,
+            user: { id: ctx.state.user.id },
+          },
+        };
+      }
+
+      const application = await super.findOne({ ...ctx, query });
+      return application;
+    },
+
     // Create application that belongs to user----------------------------------------
     async create(ctx) {
-      ctx.request.body.data.user = ctx.state.user;
-      return await super.create(ctx);
+      if (!ctx.state.user.id) {
+      }
+      const application = await super.create(ctx);
+
+      const user = await strapi.entityService.findOne(
+        "plugin::users-permissions.user",
+        ctx.state.user.id,
+        { populate: ["school_applications"] }
+      );
+      if (!user) {
+        throw new NotFoundError(`User not found`);
+      }
+      user.school_applications = [
+        ...user.school_applications,
+        application.data.id,
+      ];
+
+      const me = await strapi
+        .controller("plugin::users-permissions.user")
+        .updateMe({
+          ...ctx,
+          request: {
+            ...ctx.request,
+            body: {
+              ...ctx.request.body,
+              data: {
+                ...user,
+              },
+            },
+          },
+        });
+
+      return application;
     },
     // Update a user application----------------------------------------
     async update(ctx) {
-      let entity;
       const applications = await this.find(ctx);
       if (!applications.data || !applications.data.length) {
         return ctx.unauthorized(`You can't update this entry`);
       }
-      entity = await super.update(ctx);
-      return entity;
+      return super.update(ctx);
     },
 
     // Delete a user application----------------------------------------
     async delete(ctx) {
       const { id } = ctx.params;
       let query = ctx.query;
-      if (ctx.state.user.role.name !== "SchoolAdmin") {
+      if (isNotAdmin(ctx)) {
         query = {
           filters: {
             id: id,
@@ -85,3 +132,9 @@ module.exports = createCoreController(
     },
   })
 );
+function isNotAdmin(ctx) {
+  return (
+    ctx.state.user.role.name.toLowerCase() !== "schooladmin" &&
+    ctx.state.user.role.name.toLowerCase() !== "admin"
+  );
+}

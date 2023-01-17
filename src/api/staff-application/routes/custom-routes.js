@@ -10,5 +10,13 @@ module.exports = {
         policies: [],
       },
     },
+    {
+      method: "GET",
+      path: "/staff-applications/count",
+      handler: "staff-application.count",
+      config: {
+        policies: [],
+      },
+    },
   ],
 };

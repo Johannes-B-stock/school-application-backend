@@ -4,7 +4,9 @@
  *  staff-application controller
  */
 
+const utils = require("@strapi/utils");
 const { createCoreController } = require("@strapi/strapi").factories;
+const { UnauthorizedError } = utils.errors;
 
 module.exports = createCoreController(
   "api::staff-application.staff-application",
@@ -95,6 +97,20 @@ module.exports = createCoreController(
         return ctx.badRequest();
       }
       return data;
+    },
+    async count(ctx) {
+      const user = ctx.state.user;
+      if (!user) {
+        throw new UnauthorizedError("No user logged in");
+      }
+      if (user.role.name.toLowerCase() !== "admin") {
+        throw new UnauthorizedError("Only admins can count staff applications");
+      }
+      let query = ctx.query;
+      return strapi.entityService.count(
+        "api::staff-application.staff-application",
+        query
+      );
     },
   })
 );

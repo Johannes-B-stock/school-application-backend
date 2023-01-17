@@ -51,6 +51,9 @@ module.exports = ({ env }) => ({
   "users-permissions": {
     config: {
       jwtSecret: env("JWT_SECRET"),
+      jwt: {
+        expiresIn: "1d",
+      },
     },
   },
   email: {
@@ -67,6 +70,16 @@ module.exports = ({ env }) => ({
       settings: {
         defaultFrom: env("DEFAULT_EMAIL_FROM"),
         defaultReplyTo: env("DEFAULT_EMAIL_REPLYTO"),
+      },
+    },
+  },
+  transformer: {
+    enabled: true,
+    config: {
+      prefix: "/api/",
+      responseTransforms: {
+        removeAttributesKey: true,
+        removeDataKey: true,
       },
     },
   },
