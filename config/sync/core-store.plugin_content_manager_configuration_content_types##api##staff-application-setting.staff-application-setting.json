@@ -91,6 +91,21 @@
           "sortable": true
         }
       },
+      "referenceQuestions": {
+        "edit": {
+          "label": "referenceQuestions",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "referenceQuestions",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -127,9 +142,6 @@
         "cardImage",
         "shortDescription"
       ],
-      "editRelations": [
-        "questions"
-      ],
       "edit": [
         [
           {
@@ -151,6 +163,16 @@
           {
             "name": "allowApplications",
             "size": 4
+          },
+          {
+            "name": "questions",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "referenceQuestions",
+            "size": 6
           }
         ]
       ]

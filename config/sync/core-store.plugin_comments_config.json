@@ -1,0 +1,34 @@
+{
+  "key": "plugin_comments_config",
+  "value": {
+    "moderatorRoles": [],
+    "badWords": true,
+    "enabledCollections": [
+      "api::school-application.school-application",
+      "api::staff-application.staff-application",
+      "api::reference.reference"
+    ],
+    "approvalFlow": [],
+    "entryLabel": {
+      "*": [
+        "Title",
+        "title",
+        "Name",
+        "name",
+        "Subject",
+        "subject"
+      ]
+    },
+    "reportReasons": {
+      "BAD_LANGUAGE": "BAD_LANGUAGE",
+      "DISCRIMINATION": "DISCRIMINATION",
+      "OTHER": "OTHER"
+    },
+    "gql": {
+      "auth": true
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

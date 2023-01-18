@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::address.address",
+  "key": "plugin_content_manager_configuration_content_types::plugin::deepl.batch-translate-job",
   "value": {
-    "uid": "api::address.address",
+    "uid": "plugin::deepl.batch-translate-job",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "firstname",
-      "defaultSortBy": "firstname",
+      "mainField": "contentType",
+      "defaultSortBy": "contentType",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,115 +20,114 @@
           "sortable": true
         }
       },
-      "firstname": {
+      "contentType": {
         "edit": {
-          "label": "firstname",
+          "label": "contentType",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "firstname",
+          "label": "contentType",
           "searchable": true,
           "sortable": true
         }
       },
-      "lastname": {
+      "sourceLocale": {
         "edit": {
-          "label": "lastname",
+          "label": "sourceLocale",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "lastname",
+          "label": "sourceLocale",
           "searchable": true,
           "sortable": true
         }
       },
-      "street": {
+      "targetLocale": {
         "edit": {
-          "label": "street",
+          "label": "targetLocale",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "street",
+          "label": "targetLocale",
           "searchable": true,
           "sortable": true
         }
       },
-      "number": {
+      "entityIds": {
         "edit": {
-          "label": "number",
+          "label": "entityIds",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "number",
-          "searchable": true,
-          "sortable": true
+          "label": "entityIds",
+          "searchable": false,
+          "sortable": false
         }
       },
-      "city": {
+      "status": {
         "edit": {
-          "label": "city",
+          "label": "status",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "city",
+          "label": "status",
           "searchable": true,
           "sortable": true
         }
       },
-      "country": {
+      "failureReason": {
         "edit": {
-          "label": "country",
+          "label": "failureReason",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "country",
-          "searchable": true,
-          "sortable": true
+          "label": "failureReason",
+          "searchable": false,
+          "sortable": false
         }
       },
-      "postalCode": {
+      "progress": {
         "edit": {
-          "label": "postalCode",
+          "label": "progress",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "postalCode",
+          "label": "progress",
           "searchable": true,
           "sortable": true
         }
       },
-      "user": {
+      "autoPublish": {
         "edit": {
-          "label": "user",
+          "label": "autoPublish",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true,
-          "mainField": "username"
+          "editable": true
         },
         "list": {
-          "label": "user",
+          "label": "autoPublish",
           "searchable": true,
           "sortable": true
         }
@@ -165,49 +164,53 @@
     "layouts": {
       "list": [
         "id",
-        "firstname",
-        "lastname",
-        "street"
+        "contentType",
+        "sourceLocale",
+        "targetLocale"
       ],
       "edit": [
         [
           {
-            "name": "firstname",
+            "name": "contentType",
             "size": 6
           },
           {
-            "name": "lastname",
+            "name": "sourceLocale",
             "size": 6
           }
         ],
         [
           {
-            "name": "street",
-            "size": 6
-          },
-          {
-            "name": "number",
+            "name": "targetLocale",
             "size": 6
           }
         ],
         [
           {
-            "name": "city",
-            "size": 6
-          },
+            "name": "entityIds",
+            "size": 12
+          }
+        ],
+        [
           {
-            "name": "country",
+            "name": "status",
             "size": 6
           }
         ],
         [
           {
-            "name": "postalCode",
+            "name": "failureReason",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "progress",
             "size": 4
           },
           {
-            "name": "user",
-            "size": 6
+            "name": "autoPublish",
+            "size": 4
           }
         ]
       ]

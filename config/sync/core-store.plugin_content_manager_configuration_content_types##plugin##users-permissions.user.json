@@ -292,6 +292,35 @@
           "sortable": false
         }
       },
+      "details": {
+        "edit": {
+          "label": "details",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "phone"
+        },
+        "list": {
+          "label": "details",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "middle_names": {
+        "edit": {
+          "label": "middle_names",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "middle_names",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -378,15 +407,47 @@
             "name": "gender",
             "size": 6
           }
+        ],
+        [
+          {
+            "name": "middle_names",
+            "size": 6
+          },
+          {
+            "name": "role",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "schools",
+            "size": 6
+          },
+          {
+            "name": "school_applications",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "address",
+            "size": 6
+          },
+          {
+            "name": "emergency_address",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "staff_applications",
+            "size": 6
+          },
+          {
+            "name": "details",
+            "size": 6
+          }
         ]
-      ],
-      "editRelations": [
-        "role",
-        "schools",
-        "school_applications",
-        "address",
-        "emergency_address",
-        "staff_applications"
       ]
     }
   },

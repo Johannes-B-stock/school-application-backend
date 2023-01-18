@@ -79,22 +79,23 @@
       }
     },
     "layouts": {
-      "edit": [
-        [
-          {
-            "name": "name",
-            "size": 6
-          }
-        ]
-      ],
-      "editRelations": [
-        "questions"
-      ],
       "list": [
         "id",
         "name",
         "questions",
         "createdAt"
+      ],
+      "edit": [
+        [
+          {
+            "name": "name",
+            "size": 6
+          },
+          {
+            "name": "questions",
+            "size": 6
+          }
+        ]
       ]
     }
   },

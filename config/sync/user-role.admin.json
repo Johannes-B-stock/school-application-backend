@@ -1,10 +1,19 @@
 {
-  "name": "SchoolAdmin",
-  "description": "This role allows to create & manage schools",
-  "type": "school_admin",
+  "name": "Admin",
+  "description": "This role is for users who want to manage schools and staff applications. They have access to all data.",
+  "type": "admin",
   "permissions": [
     {
+      "action": "api::about-page.about-page.createLocalization"
+    },
+    {
+      "action": "api::about-page.about-page.delete"
+    },
+    {
       "action": "api::about-page.about-page.find"
+    },
+    {
+      "action": "api::about-page.about-page.update"
     },
     {
       "action": "api::address.address.create"
@@ -37,13 +46,40 @@
       "action": "api::answer.answer.update"
     },
     {
+      "action": "api::impressum.impressum.createLocalization"
+    },
+    {
+      "action": "api::impressum.impressum.delete"
+    },
+    {
       "action": "api::impressum.impressum.find"
+    },
+    {
+      "action": "api::impressum.impressum.update"
+    },
+    {
+      "action": "api::page-content.page-content.createLocalization"
+    },
+    {
+      "action": "api::page-content.page-content.delete"
     },
     {
       "action": "api::page-content.page-content.find"
     },
     {
+      "action": "api::page-content.page-content.update"
+    },
+    {
+      "action": "api::privacy.privacy.createLocalization"
+    },
+    {
+      "action": "api::privacy.privacy.delete"
+    },
+    {
       "action": "api::privacy.privacy.find"
+    },
+    {
+      "action": "api::privacy.privacy.update"
     },
     {
       "action": "api::question-collection.question-collection.create"
@@ -64,6 +100,12 @@
       "action": "api::question-type.question-type.create"
     },
     {
+      "action": "api::question-type.question-type.createLocalization"
+    },
+    {
+      "action": "api::question-type.question-type.delete"
+    },
+    {
       "action": "api::question-type.question-type.find"
     },
     {
@@ -74,6 +116,12 @@
     },
     {
       "action": "api::question.question.create"
+    },
+    {
+      "action": "api::question.question.createLocalization"
+    },
+    {
+      "action": "api::question.question.delete"
     },
     {
       "action": "api::question.question.find"
@@ -142,10 +190,16 @@
       "action": "api::staff-application-setting.staff-application-setting.createLocalization"
     },
     {
+      "action": "api::staff-application-setting.staff-application-setting.delete"
+    },
+    {
       "action": "api::staff-application-setting.staff-application-setting.find"
     },
     {
       "action": "api::staff-application-setting.staff-application-setting.update"
+    },
+    {
+      "action": "api::staff-application.staff-application.count"
     },
     {
       "action": "api::staff-application.staff-application.create"
@@ -166,16 +220,76 @@
       "action": "api::staff-application.staff-application.update"
     },
     {
+      "action": "api::user-detail.user-detail.create"
+    },
+    {
       "action": "api::user-detail.user-detail.createMe"
+    },
+    {
+      "action": "api::user-detail.user-detail.delete"
+    },
+    {
+      "action": "api::user-detail.user-detail.find"
     },
     {
       "action": "api::user-detail.user-detail.findMe"
     },
     {
+      "action": "api::user-detail.user-detail.findOne"
+    },
+    {
+      "action": "api::user-detail.user-detail.update"
+    },
+    {
       "action": "api::user-detail.user-detail.updateMe"
     },
     {
+      "action": "plugin::comments.client.findAllFlat"
+    },
+    {
+      "action": "plugin::comments.client.findAllInHierarchy"
+    },
+    {
+      "action": "plugin::comments.client.post"
+    },
+    {
+      "action": "plugin::comments.client.put"
+    },
+    {
+      "action": "plugin::comments.client.removeComment"
+    },
+    {
+      "action": "plugin::comments.client.reportAbuse"
+    },
+    {
+      "action": "plugin::content-type-builder.components.getComponent"
+    },
+    {
+      "action": "plugin::content-type-builder.components.getComponents"
+    },
+    {
+      "action": "plugin::content-type-builder.content-types.getContentType"
+    },
+    {
+      "action": "plugin::content-type-builder.content-types.getContentTypes"
+    },
+    {
       "action": "plugin::email.email.send"
+    },
+    {
+      "action": "plugin::i18n.locales.listLocales"
+    },
+    {
+      "action": "plugin::import-export-entries.export.exportData"
+    },
+    {
+      "action": "plugin::import-export-entries.import.importData"
+    },
+    {
+      "action": "plugin::slugify.slugController.findSlug"
+    },
+    {
+      "action": "plugin::upload.content-api.destroy"
     },
     {
       "action": "plugin::upload.content-api.find"
@@ -185,6 +299,9 @@
     },
     {
       "action": "plugin::upload.content-api.upload"
+    },
+    {
+      "action": "plugin::users-permissions.auth.callback"
     },
     {
       "action": "plugin::users-permissions.auth.changePassword"
@@ -199,6 +316,9 @@
       "action": "plugin::users-permissions.auth.forgotPassword"
     },
     {
+      "action": "plugin::users-permissions.auth.register"
+    },
+    {
       "action": "plugin::users-permissions.auth.resetPassword"
     },
     {
@@ -211,7 +331,25 @@
       "action": "plugin::users-permissions.role.createRole"
     },
     {
+      "action": "plugin::users-permissions.role.deleteRole"
+    },
+    {
+      "action": "plugin::users-permissions.role.find"
+    },
+    {
+      "action": "plugin::users-permissions.role.findOne"
+    },
+    {
+      "action": "plugin::users-permissions.role.updateRole"
+    },
+    {
       "action": "plugin::users-permissions.user.count"
+    },
+    {
+      "action": "plugin::users-permissions.user.create"
+    },
+    {
+      "action": "plugin::users-permissions.user.destroy"
     },
     {
       "action": "plugin::users-permissions.user.find"

@@ -632,7 +632,8 @@
           "state",
           "step",
           "reference1",
-          "reference2"
+          "reference2",
+          "applicationFeePaid"
         ]
       },
       "conditions": []
@@ -660,7 +661,8 @@
           "state",
           "step",
           "reference1",
-          "reference2"
+          "reference2",
+          "applicationFeePaid"
         ]
       },
       "conditions": []
@@ -676,7 +678,8 @@
           "state",
           "step",
           "reference1",
-          "reference2"
+          "reference2",
+          "applicationFeePaid"
         ]
       },
       "conditions": []
@@ -705,7 +708,9 @@
           "secondarySchool",
           "contactEmail",
           "stripeAppFeeId",
-          "stripeSchoolFeeId"
+          "stripeSchoolFeeId",
+          "detailedDescription",
+          "currency"
         ],
         "locales": [
           "en",
@@ -760,7 +765,9 @@
           "secondarySchool",
           "contactEmail",
           "stripeAppFeeId",
-          "stripeSchoolFeeId"
+          "stripeSchoolFeeId",
+          "detailedDescription",
+          "currency"
         ],
         "locales": [
           "en",
@@ -793,7 +800,9 @@
           "secondarySchool",
           "contactEmail",
           "stripeAppFeeId",
-          "stripeSchoolFeeId"
+          "stripeSchoolFeeId",
+          "detailedDescription",
+          "currency"
         ],
         "locales": [
           "en",
@@ -811,7 +820,8 @@
           "cardImage",
           "shortDescription",
           "details",
-          "allowApplications"
+          "allowApplications",
+          "referenceQuestions"
         ],
         "locales": [
           "en",
@@ -851,7 +861,8 @@
           "cardImage",
           "shortDescription",
           "details",
-          "allowApplications"
+          "allowApplications",
+          "referenceQuestions"
         ],
         "locales": [
           "en",
@@ -869,7 +880,8 @@
           "cardImage",
           "shortDescription",
           "details",
-          "allowApplications"
+          "allowApplications",
+          "referenceQuestions"
         ],
         "locales": [
           "en",
@@ -942,6 +954,72 @@
           "step"
         ]
       },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::user-detail.user-detail",
+      "properties": {
+        "fields": [
+          "phone",
+          "mobile_phone",
+          "nationality",
+          "native_language",
+          "language2",
+          "language3",
+          "language2_skills",
+          "language3_skills",
+          "user"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::user-detail.user-detail",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::user-detail.user-detail",
+      "properties": {
+        "fields": [
+          "phone",
+          "mobile_phone",
+          "nationality",
+          "native_language",
+          "language2",
+          "language3",
+          "language2_skills",
+          "language3_skills",
+          "user"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::user-detail.user-detail",
+      "properties": {
+        "fields": [
+          "phone",
+          "mobile_phone",
+          "nationality",
+          "native_language",
+          "language2",
+          "language3",
+          "language2_skills",
+          "language3_skills",
+          "user"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "admin::api-tokens.access",
+      "subject": null,
+      "properties": {},
       "conditions": []
     },
     {
@@ -958,6 +1036,12 @@
     },
     {
       "action": "admin::api-tokens.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "admin::api-tokens.regenerate",
       "subject": null,
       "properties": {},
       "conditions": []
@@ -1071,6 +1155,42 @@
       "conditions": []
     },
     {
+      "action": "plugin::comments.moderate",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::comments.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::comments.reports.action",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::comments.reports.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::comments.settings.change",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::comments.settings.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
       "action": "plugin::config-sync.menu-link",
       "subject": null,
       "properties": {},
@@ -1096,138 +1216,6 @@
     },
     {
       "action": "plugin::content-manager.explorer.create",
-      "subject": "plugin::strapi-stripe.strapi-stripe-payment",
-      "properties": {
-        "fields": [
-          "txnDate",
-          "transactionId",
-          "isTxnSuccessful",
-          "txnMessage",
-          "txnErrorMessage",
-          "txnAmount",
-          "customerName",
-          "customerEmail",
-          "stripeProduct"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "plugin::strapi-stripe.strapi-stripe-payment",
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "plugin::strapi-stripe.strapi-stripe-payment",
-      "properties": {
-        "fields": [
-          "txnDate",
-          "transactionId",
-          "isTxnSuccessful",
-          "txnMessage",
-          "txnErrorMessage",
-          "txnAmount",
-          "customerName",
-          "customerEmail",
-          "stripeProduct"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "plugin::strapi-stripe.strapi-stripe-payment",
-      "properties": {
-        "fields": [
-          "txnDate",
-          "transactionId",
-          "isTxnSuccessful",
-          "txnMessage",
-          "txnErrorMessage",
-          "txnAmount",
-          "customerName",
-          "customerEmail",
-          "stripeProduct"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "plugin::strapi-stripe.strapi-stripe-product",
-      "properties": {
-        "fields": [
-          "title",
-          "slug",
-          "description",
-          "price",
-          "currency",
-          "productImage",
-          "isSubscription",
-          "interval",
-          "trialPeriodDays",
-          "stripeProductId",
-          "stripePriceId",
-          "stripePlanId",
-          "stripePayment"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "plugin::strapi-stripe.strapi-stripe-product",
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "plugin::strapi-stripe.strapi-stripe-product",
-      "properties": {
-        "fields": [
-          "title",
-          "slug",
-          "description",
-          "price",
-          "currency",
-          "productImage",
-          "isSubscription",
-          "interval",
-          "trialPeriodDays",
-          "stripeProductId",
-          "stripePriceId",
-          "stripePlanId",
-          "stripePayment"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "plugin::strapi-stripe.strapi-stripe-product",
-      "properties": {
-        "fields": [
-          "title",
-          "slug",
-          "description",
-          "price",
-          "currency",
-          "productImage",
-          "isSubscription",
-          "interval",
-          "trialPeriodDays",
-          "stripeProductId",
-          "stripePriceId",
-          "stripePlanId",
-          "stripePayment"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
       "subject": "plugin::users-permissions.user",
       "properties": {
         "fields": [
@@ -1249,7 +1237,9 @@
           "birthday",
           "gender",
           "emergency_address",
-          "staff_applications"
+          "staff_applications",
+          "details",
+          "middle_names"
         ]
       },
       "conditions": []
@@ -1283,7 +1273,9 @@
           "birthday",
           "gender",
           "emergency_address",
-          "staff_applications"
+          "staff_applications",
+          "details",
+          "middle_names"
         ]
       },
       "conditions": []
@@ -1311,7 +1303,9 @@
           "birthday",
           "gender",
           "emergency_address",
-          "staff_applications"
+          "staff_applications",
+          "details",
+          "middle_names"
         ]
       },
       "conditions": []
@@ -1324,6 +1318,12 @@
     },
     {
       "action": "plugin::content-type-builder.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::deepl.batch-translate",
       "subject": null,
       "properties": {},
       "conditions": []
@@ -1390,6 +1390,12 @@
     },
     {
       "action": "plugin::upload.assets.update",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.configure-view",
       "subject": null,
       "properties": {},
       "conditions": []

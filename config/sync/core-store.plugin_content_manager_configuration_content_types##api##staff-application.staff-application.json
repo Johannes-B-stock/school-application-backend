@@ -211,14 +211,28 @@
           {
             "name": "step",
             "size": 4
+          },
+          {
+            "name": "answers",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "user",
+            "size": 6
+          },
+          {
+            "name": "reference1",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "reference2",
+            "size": 6
           }
         ]
-      ],
-      "editRelations": [
-        "answers",
-        "user",
-        "reference1",
-        "reference2"
       ]
     }
   },

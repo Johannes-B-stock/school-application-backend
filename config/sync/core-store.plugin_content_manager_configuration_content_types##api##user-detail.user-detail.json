@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::address.address",
+  "key": "plugin_content_manager_configuration_content_types::api::user-detail.user-detail",
   "value": {
-    "uid": "api::address.address",
+    "uid": "api::user-detail.user-detail",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "firstname",
-      "defaultSortBy": "firstname",
+      "mainField": "phone",
+      "defaultSortBy": "phone",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,100 +20,114 @@
           "sortable": true
         }
       },
-      "firstname": {
+      "phone": {
         "edit": {
-          "label": "firstname",
+          "label": "phone",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "firstname",
+          "label": "phone",
           "searchable": true,
           "sortable": true
         }
       },
-      "lastname": {
+      "mobile_phone": {
         "edit": {
-          "label": "lastname",
+          "label": "mobile_phone",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "lastname",
+          "label": "mobile_phone",
           "searchable": true,
           "sortable": true
         }
       },
-      "street": {
+      "nationality": {
         "edit": {
-          "label": "street",
+          "label": "nationality",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "street",
+          "label": "nationality",
           "searchable": true,
           "sortable": true
         }
       },
-      "number": {
+      "native_language": {
         "edit": {
-          "label": "number",
+          "label": "native_language",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "number",
+          "label": "native_language",
           "searchable": true,
           "sortable": true
         }
       },
-      "city": {
+      "language2": {
         "edit": {
-          "label": "city",
+          "label": "language2",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "city",
+          "label": "language2",
           "searchable": true,
           "sortable": true
         }
       },
-      "country": {
+      "language3": {
         "edit": {
-          "label": "country",
+          "label": "language3",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "country",
+          "label": "language3",
           "searchable": true,
           "sortable": true
         }
       },
-      "postalCode": {
+      "language2_skills": {
         "edit": {
-          "label": "postalCode",
+          "label": "language2_skills",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "postalCode",
+          "label": "language2_skills",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "language3_skills": {
+        "edit": {
+          "label": "language3_skills",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "language3_skills",
           "searchable": true,
           "sortable": true
         }
@@ -165,46 +179,52 @@
     "layouts": {
       "list": [
         "id",
-        "firstname",
-        "lastname",
-        "street"
+        "phone",
+        "mobile_phone",
+        "nationality"
       ],
       "edit": [
         [
           {
-            "name": "firstname",
+            "name": "phone",
             "size": 6
           },
           {
-            "name": "lastname",
+            "name": "mobile_phone",
             "size": 6
           }
         ],
         [
           {
-            "name": "street",
+            "name": "nationality",
             "size": 6
           },
           {
-            "name": "number",
+            "name": "native_language",
             "size": 6
           }
         ],
         [
           {
-            "name": "city",
+            "name": "language2",
             "size": 6
           },
           {
-            "name": "country",
+            "name": "language3",
             "size": 6
           }
         ],
         [
           {
-            "name": "postalCode",
-            "size": 4
+            "name": "language2_skills",
+            "size": 6
           },
+          {
+            "name": "language3_skills",
+            "size": 6
+          }
+        ],
+        [
           {
             "name": "user",
             "size": 6

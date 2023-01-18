@@ -115,6 +115,15 @@
       "action": "api::staff-application.staff-application.update"
     },
     {
+      "action": "api::user-detail.user-detail.createMe"
+    },
+    {
+      "action": "api::user-detail.user-detail.findMe"
+    },
+    {
+      "action": "api::user-detail.user-detail.updateMe"
+    },
+    {
       "action": "plugin::upload.content-api.find"
     },
     {
@@ -125,6 +134,9 @@
     },
     {
       "action": "plugin::users-permissions.auth.callback"
+    },
+    {
+      "action": "plugin::users-permissions.auth.changePassword"
     },
     {
       "action": "plugin::users-permissions.auth.connect"
@@ -148,19 +160,7 @@
       "action": "plugin::users-permissions.permissions.getPermissions"
     },
     {
-      "action": "plugin::users-permissions.user.changePassword"
-    },
-    {
-      "action": "plugin::users-permissions.user.find"
-    },
-    {
-      "action": "plugin::users-permissions.user.findOne"
-    },
-    {
       "action": "plugin::users-permissions.user.me"
-    },
-    {
-      "action": "plugin::users-permissions.user.update"
     },
     {
       "action": "plugin::users-permissions.user.updateMe"

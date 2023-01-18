@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::address.address",
+  "key": "plugin_content_manager_configuration_content_types::plugin::upload.folder",
   "value": {
-    "uid": "api::address.address",
+    "uid": "plugin::upload.folder",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "firstname",
-      "defaultSortBy": "firstname",
+      "mainField": "name",
+      "defaultSortBy": "name",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,115 +20,89 @@
           "sortable": true
         }
       },
-      "firstname": {
+      "name": {
         "edit": {
-          "label": "firstname",
+          "label": "name",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "firstname",
+          "label": "name",
           "searchable": true,
           "sortable": true
         }
       },
-      "lastname": {
+      "pathId": {
         "edit": {
-          "label": "lastname",
+          "label": "pathId",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "lastname",
+          "label": "pathId",
           "searchable": true,
           "sortable": true
         }
       },
-      "street": {
+      "parent": {
         "edit": {
-          "label": "street",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "street",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "number": {
-        "edit": {
-          "label": "number",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "number",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "city": {
-        "edit": {
-          "label": "city",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "city",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "country": {
-        "edit": {
-          "label": "country",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "country",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "postalCode": {
-        "edit": {
-          "label": "postalCode",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "postalCode",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "user": {
-        "edit": {
-          "label": "user",
+          "label": "parent",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true,
-          "mainField": "username"
+          "mainField": "name"
         },
         "list": {
-          "label": "user",
+          "label": "parent",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "children": {
+        "edit": {
+          "label": "children",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "children",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "files": {
+        "edit": {
+          "label": "files",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "files",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "path": {
+        "edit": {
+          "label": "path",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "path",
           "searchable": true,
           "sortable": true
         }
@@ -165,48 +139,38 @@
     "layouts": {
       "list": [
         "id",
-        "firstname",
-        "lastname",
-        "street"
+        "name",
+        "pathId",
+        "parent"
       ],
       "edit": [
         [
           {
-            "name": "firstname",
+            "name": "name",
             "size": 6
           },
           {
-            "name": "lastname",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "street",
-            "size": 6
-          },
-          {
-            "name": "number",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "city",
-            "size": 6
-          },
-          {
-            "name": "country",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "postalCode",
+            "name": "pathId",
             "size": 4
+          }
+        ],
+        [
+          {
+            "name": "path",
+            "size": 6
           },
           {
-            "name": "user",
+            "name": "parent",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "children",
+            "size": 6
+          },
+          {
+            "name": "files",
             "size": 6
           }
         ]

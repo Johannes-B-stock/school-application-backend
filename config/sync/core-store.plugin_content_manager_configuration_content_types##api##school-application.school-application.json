@@ -123,6 +123,20 @@
           "sortable": true
         }
       },
+      "applicationFeePaid": {
+        "edit": {
+          "label": "applicationFeePaid",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "applicationFeePaid",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -163,19 +177,43 @@
             "name": "step",
             "size": 4
           }
+        ],
+        [
+          {
+            "name": "applicationFeePaid",
+            "size": 4
+          },
+          {
+            "name": "school",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "user",
+            "size": 6
+          },
+          {
+            "name": "answers",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "reference1",
+            "size": 6
+          },
+          {
+            "name": "reference2",
+            "size": 6
+          }
         ]
-      ],
-      "editRelations": [
-        "school",
-        "user",
-        "answers",
-        "reference1",
-        "reference2"
       ],
       "list": [
         "id",
         "school",
         "step",
+        "createdAt",
         "reference1",
         "state"
       ]

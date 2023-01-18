@@ -76,6 +76,9 @@
       "action": "plugin::upload.content-api.upload"
     },
     {
+      "action": "plugin::users-permissions.auth.changePassword"
+    },
+    {
       "action": "plugin::users-permissions.auth.connect"
     },
     {
@@ -92,9 +95,6 @@
     },
     {
       "action": "plugin::users-permissions.permissions.getPermissions"
-    },
-    {
-      "action": "plugin::users-permissions.user.changePassword"
     },
     {
       "action": "plugin::users-permissions.user.find"

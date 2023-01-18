@@ -79,19 +79,25 @@
       "action": "plugin::upload.content-api.upload"
     },
     {
+      "action": "plugin::users-permissions.auth.changePassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
       "action": "plugin::users-permissions.auth.emailConfirmation"
     },
     {
       "action": "plugin::users-permissions.auth.forgotPassword"
     },
     {
+      "action": "plugin::users-permissions.auth.resetPassword"
+    },
+    {
       "action": "plugin::users-permissions.auth.sendEmailConfirmation"
     },
     {
       "action": "plugin::users-permissions.permissions.getPermissions"
-    },
-    {
-      "action": "plugin::users-permissions.user.changePassword"
     },
     {
       "action": "plugin::users-permissions.user.find"

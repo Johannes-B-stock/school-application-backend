@@ -305,6 +305,34 @@
           "sortable": true
         }
       },
+      "detailedDescription": {
+        "edit": {
+          "label": "detailedDescription",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "detailedDescription",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "currency": {
+        "edit": {
+          "label": "currency",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "currency",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -384,9 +412,15 @@
         ],
         [
           {
+            "name": "currency",
+            "size": 6
+          },
+          {
             "name": "endDate",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "image",
             "size": 6
@@ -417,14 +451,39 @@
             "name": "stripeSchoolFeeId",
             "size": 4
           }
+        ],
+        [
+          {
+            "name": "detailedDescription",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "students",
+            "size": 6
+          },
+          {
+            "name": "staff",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "applications",
+            "size": 6
+          },
+          {
+            "name": "applicationQuestions",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "referenceQuestions",
+            "size": 6
+          }
         ]
-      ],
-      "editRelations": [
-        "students",
-        "staff",
-        "applications",
-        "applicationQuestions",
-        "referenceQuestions"
       ]
     }
   },

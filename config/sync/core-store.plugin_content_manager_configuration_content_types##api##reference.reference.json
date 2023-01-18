@@ -223,10 +223,13 @@
             "name": "applicant",
             "size": 6
           }
+        ],
+        [
+          {
+            "name": "answers",
+            "size": 6
+          }
         ]
-      ],
-      "editRelations": [
-        "answers"
       ]
     }
   },

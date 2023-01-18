@@ -1,12 +1,12 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::answer.answer",
+  "key": "plugin_content_manager_configuration_content_types::plugin::comments.comment-report",
   "value": {
-    "uid": "api::answer.answer",
+    "uid": "plugin::comments.comment-report",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
-      "pageSize": 50,
+      "pageSize": 10,
       "mainField": "id",
       "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
@@ -20,61 +20,59 @@
           "sortable": true
         }
       },
-      "answer": {
+      "content": {
         "edit": {
-          "label": "answer",
+          "label": "content",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "answer",
+          "label": "content",
           "searchable": true,
           "sortable": true
         }
       },
-      "school_application": {
+      "reason": {
         "edit": {
-          "label": "school_application",
+          "label": "reason",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true,
-          "mainField": "id"
+          "editable": true
         },
         "list": {
-          "label": "school_application",
+          "label": "reason",
           "searchable": true,
           "sortable": true
         }
       },
-      "question": {
+      "resolved": {
         "edit": {
-          "label": "question",
+          "label": "resolved",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true,
-          "mainField": "id"
+          "editable": true
         },
         "list": {
-          "label": "question",
-          "searchable": false,
-          "sortable": false
+          "label": "resolved",
+          "searchable": true,
+          "sortable": true
         }
       },
-      "staff_application": {
+      "related": {
         "edit": {
-          "label": "staff_application",
+          "label": "related",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true,
-          "mainField": "id"
+          "mainField": "blockReason"
         },
         "list": {
-          "label": "staff_application",
+          "label": "related",
           "searchable": true,
           "sortable": true
         }
@@ -111,28 +109,28 @@
     "layouts": {
       "list": [
         "id",
-        "answer",
-        "school_application",
-        "createdAt"
+        "content",
+        "reason",
+        "resolved"
       ],
       "edit": [
         [
           {
-            "name": "answer",
+            "name": "content",
             "size": 6
           },
           {
-            "name": "school_application",
+            "name": "reason",
             "size": 6
           }
         ],
         [
           {
-            "name": "question",
-            "size": 6
+            "name": "resolved",
+            "size": 4
           },
           {
-            "name": "staff_application",
+            "name": "related",
             "size": 6
           }
         ]

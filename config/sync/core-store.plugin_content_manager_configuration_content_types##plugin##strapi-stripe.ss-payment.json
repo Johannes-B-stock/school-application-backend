@@ -1,7 +1,7 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::plugin::strapi-stripe.strapi-stripe-payment",
+  "key": "plugin_content_manager_configuration_content_types::plugin::strapi-stripe.ss-payment",
   "value": {
-    "uid": "plugin::strapi-stripe.strapi-stripe-payment",
+    "uid": "plugin::strapi-stripe.ss-payment",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -183,9 +183,6 @@
         "transactionId",
         "isTxnSuccessful"
       ],
-      "editRelations": [
-        "stripeProduct"
-      ],
       "edit": [
         [
           {
@@ -224,6 +221,12 @@
           },
           {
             "name": "customerEmail",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "stripeProduct",
             "size": 6
           }
         ]

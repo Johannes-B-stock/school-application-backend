@@ -20,20 +20,6 @@
           "sortable": true
         }
       },
-      "question": {
-        "edit": {
-          "label": "question",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "question",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "collection": {
         "edit": {
           "label": "collection",
@@ -106,6 +92,20 @@
           "sortable": true
         }
       },
+      "question": {
+        "edit": {
+          "label": "question",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "question",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -136,6 +136,13 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "collection",
+        "question",
+        "required",
+        "type"
+      ],
       "edit": [
         [
           {
@@ -157,19 +164,18 @@
           {
             "name": "inputType",
             "size": 6
+          },
+          {
+            "name": "collection",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "type",
+            "size": 6
           }
         ]
-      ],
-      "editRelations": [
-        "collection",
-        "type"
-      ],
-      "list": [
-        "id",
-        "collection",
-        "question",
-        "required",
-        "type"
       ]
     }
   },
