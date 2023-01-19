@@ -78,6 +78,19 @@ module.exports = (plugin) => {
     ctx.body = { staff: users, pagination };
   };
 
+  plugin.controllers.auth.getEnabledProviders = async (ctx) => {
+    const providers = Object.entries(
+      await strapi
+        .store({ type: "plugin", name: "users-permissions", key: "grant" })
+        .get()
+    );
+
+    const enabledProviders = providers
+      .filter((provider) => provider[1].enabled && provider[0] !== "email")
+      .map((provider) => provider[0]);
+
+    ctx.send(enabledProviders);
+  };
   // CUSTOM ROUTES
 
   // Add the custom route
@@ -97,6 +110,16 @@ module.exports = (plugin) => {
     config: {
       prefix: "",
       policies: ["global::is-staff"],
+    },
+  });
+
+  plugin.routes["content-api"].routes.unshift({
+    method: "GET",
+    path: "/auth/enabled-providers",
+    handler: "auth.getEnabledProviders",
+    config: {
+      prefix: "",
+      policies: [],
     },
   });
 
