@@ -1,0 +1,105 @@
+diff --git a/node_modules/@strapi/plugin-users-permissions/server/bootstrap/grant-config.js b/node_modules/@strapi/plugin-users-permissions/server/bootstrap/grant-config.js
+index dc6c4fd..63ffd9b 100644
+--- a/node_modules/@strapi/plugin-users-permissions/server/bootstrap/grant-config.js
++++ b/node_modules/@strapi/plugin-users-permissions/server/bootstrap/grant-config.js
+@@ -27,7 +27,7 @@ module.exports = (baseURL) => ({
+     key: '',
+     secret: '',
+     callback: `${baseURL}/google/callback`,
+-    scope: ['email'],
++    scope: ['email', 'profile'],
+   },
+   github: {
+     enabled: false,
+diff --git a/node_modules/@strapi/plugin-users-permissions/server/controllers/auth.js b/node_modules/@strapi/plugin-users-permissions/server/controllers/auth.js
+index cb73abd..6fd0eff 100644
+--- a/node_modules/@strapi/plugin-users-permissions/server/controllers/auth.js
++++ b/node_modules/@strapi/plugin-users-permissions/server/controllers/auth.js
+@@ -35,6 +35,7 @@ module.exports = {
+   async callback(ctx) {
+     const provider = ctx.params.provider || 'local';
+     const params = ctx.request.body;
++    console.log(params);
+ 
+     const store = strapi.store({ type: 'plugin', name: 'users-permissions' });
+     const grantSettings = await store.get({ key: 'grant' });
+@@ -70,7 +71,6 @@ module.exports = {
+         params.password,
+         user.password
+       );
+-
+       if (!validPassword) {
+         throw new ValidationError('Invalid identifier or password');
+       }
+diff --git a/node_modules/@strapi/plugin-users-permissions/server/services/providers-registry.js b/node_modules/@strapi/plugin-users-permissions/server/services/providers-registry.js
+index a6be6d5..bdc33c4 100644
+--- a/node_modules/@strapi/plugin-users-permissions/server/services/providers-registry.js
++++ b/node_modules/@strapi/plugin-users-permissions/server/services/providers-registry.js
+@@ -46,7 +46,16 @@ const getInitialProviders = ({ purest }) => ({
+         email: body.email,
+       }));
+   },
+-  async google({ accessToken }) {
++  async google({ accessToken, query }) {
++    let name = undefined;
++    let picture = undefined;
++    const id_token = query.id_token;
++    if(id_token){
++      const payload = jwt.decode(id_token);
++      name = payload.name;
++      picture = payload.picture;
++    }
++
+     const google = purest({ provider: 'google' });
+     
+     return google
+@@ -54,10 +63,13 @@ const getInitialProviders = ({ purest }) => ({
+       .get('tokeninfo')
+       .qs({ accessToken })
+       .request()
+-      .then(({ body }) => ({
+-        username: body.email.split('@')[0],
+-        email: body.email,
+-      }));
++      .then(({ body }) => {
++        return {
++          username: name ?? body.email.split('@')[0],
++          picture: picture,
++          email: body.email,
++        }
++      });
+   },
+   async github({ accessToken }) {
+     const github = purest({
+diff --git a/node_modules/@strapi/plugin-users-permissions/server/services/providers.js b/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
+index 79805b3..edd5509 100644
+--- a/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
++++ b/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
+@@ -7,6 +7,8 @@
+ // Public node modules.
+ const _ = require('lodash');
+ const urlJoin = require('url-join');
++const fetch = require("node-fetch");
++const FormData = require('form-data');
+ 
+ const { getAbsoluteServerUrl } = require('@strapi/utils');
+ const { getService } = require('../utils');
+@@ -45,7 +47,6 @@ module.exports = ({ strapi }) => {
+ 
+   const connect = async (provider, query) => {
+     const accessToken = query.access_token || query.code || query.oauth_token;
+-
+     if (!accessToken) {
+       throw new Error('No access_token.');
+     }
+@@ -87,6 +88,10 @@ module.exports = ({ strapi }) => {
+       .query('plugin::users-permissions.role')
+       .findOne({ where: { type: advancedSettings.default_role } });
+ 
++    if (profile.picture) {
++      delete profile.picture;
++    }
++
+     // Create the new user.
+     const newUser = {
+       ...profile,
