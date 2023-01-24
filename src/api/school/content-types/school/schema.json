@@ -135,12 +135,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::school-application.school-application",
-      "mappedBy": "school",
       "pluginOptions": {
         "deepl": {
           "translate": "translate"
         }
-      }
+      },
+      "mappedBy": "school"
     },
     "applicationQuestions": {
       "type": "relation",

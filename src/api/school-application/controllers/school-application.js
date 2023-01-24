@@ -5,7 +5,7 @@
  */
 const utils = require("@strapi/utils");
 const { createCoreController } = require("@strapi/strapi").factories;
-const { isNotAdmin } = require("../../../common/utils");
+const { isNotAdmin, isAdmin } = require("../../../common/utils");
 const { NotFoundError } = utils.errors;
 
 module.exports = createCoreController(
@@ -46,46 +46,94 @@ module.exports = createCoreController(
       if (!ctx.state.user.id) {
         return await super.create(ctx);
       }
-      const application = await super.create(ctx);
-
-      const user = await strapi.entityService.findOne(
-        "plugin::users-permissions.user",
-        ctx.state.user.id,
-        { populate: ["school_applications"] }
-      );
-      if (!user) {
-        throw new NotFoundError(`User not found`);
-      }
-      user.school_applications = [
-        ...user.school_applications,
-        application.data.id,
-      ];
-
-      // is this even working???
-      const me = await strapi
-        .controller("plugin::users-permissions.user")
-        .updateMe({
-          ...ctx,
-          request: {
-            ...ctx.request,
-            body: {
-              ...ctx.request.body,
-              data: {
-                ...user,
-              },
-            },
+      if (!ctx.request.body?.data?.user) {
+        ctx.request.body = {
+          ...ctx.request.body,
+          data: {
+            ...ctx.request.body?.data,
+            user: ctx.state.user.id,
           },
-        });
-
+        };
+      }
+      const application = await super.create(ctx);
       return application;
     },
-    // Update a user application----------------------------------------
+
+    // Update a school application----------------------------------------
     async update(ctx) {
-      const applications = await this.find(ctx);
-      if (!applications.data || !applications.data.length) {
+      if (!ctx.state.user) {
+        return 403;
+      }
+      const { id } = ctx.params;
+      const query = {
+        ...ctx.query,
+        filters: {
+          ...ctx.query?.filters,
+          id: id,
+        },
+        populate: {
+          user: { populate: "role" },
+          school: { populate: "students" },
+        },
+      };
+      if (!isAdmin(ctx)) {
+        query.filters = {
+          user: { id: { $eq: ctx.state.user.id } },
+        };
+      }
+      const applicationFind = await this.findOne({ ...ctx, query: query });
+      if (!applicationFind.data) {
         return ctx.unauthorized(`You can't update this entry`);
       }
-      return super.update(ctx);
+
+      const application = applicationFind.data;
+      if (
+        application.attributes.state !== "submitted" &&
+        ctx.request.body?.data?.state === "submitted"
+      ) {
+        ctx.request.body.data.submittedAt = new Date().getTime();
+      }
+
+      const school = application.attributes.school.data;
+      const user = application.attributes.user.data;
+      if (
+        application.attributes.state !== "approved" &&
+        ctx.request.body?.data?.state === "approved"
+      ) {
+        // get students from school info
+        const students = school.attributes.students.data.map(
+          (student) => student.id
+        );
+
+        // get user id from application and add to students
+
+        const updatedStudents = [...students, user.id];
+
+        await strapi.entityService.update("api::school.school", school.id, {
+          data: { students: updatedStudents },
+        });
+
+        if (
+          user.attributes.role.data.attributes.name.toLowerCase() === "user"
+        ) {
+          // get roles
+          const roles = await strapi.entityService.findMany(
+            "plugin::users-permissions.role"
+          );
+
+          const studentRole = roles.find(
+            (role) => role.name.toLowerCase() === "student"
+          );
+
+          // update user role to student
+          await strapi.entityService.update(
+            "plugin::users-permissions.user",
+            user.id,
+            { data: { role: studentRole.id } }
+          );
+        }
+      }
+      return await super.update(ctx);
     },
 
     // Delete a user application----------------------------------------

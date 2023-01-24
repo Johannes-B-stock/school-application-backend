@@ -5,6 +5,7 @@
  */
 
 const utils = require("@strapi/utils");
+const { isAdmin } = require("../../../common/utils");
 const { createCoreController } = require("@strapi/strapi").factories;
 const { UnauthorizedError } = utils.errors;
 
@@ -37,8 +38,11 @@ module.exports = createCoreController(
       };
       return await super.create(ctx);
     },
-    // Update a user application----------------------------------------
+    // Update a staff application----------------------------------------
     async update(ctx) {
+      if (!ctx.state.user) {
+        return 403;
+      }
       const { id } = ctx.params;
       const query = {
         ...ctx.query,
@@ -46,14 +50,29 @@ module.exports = createCoreController(
           ...ctx.query?.filters,
           id: id,
         },
+        populate: {
+          user: "*",
+        },
       };
-      if (ctx.state.user.role.name.toLowerCase() !== "admin") {
-        query.filters.user = { id: ctx.state.user.id };
+      if (!isAdmin(ctx)) {
+        query.filters = {
+          user: { id: { $eq: ctx.state.user.id } },
+        };
       }
       const applications = await this.find({ ...ctx, query: query });
       if (!applications.data || !applications.data.length) {
         return ctx.unauthorized(`You can't update this entry`);
       }
+      const application = applications.data[0];
+      if (
+        application.attributes.state !== "submitted" &&
+        ctx.request.body?.data?.state === "submitted"
+      ) {
+        ctx.request.body.data.submittedAt = new Date().getTime();
+
+        // update user and switch role to staff
+      }
+
       return await super.update(ctx);
     },
 
