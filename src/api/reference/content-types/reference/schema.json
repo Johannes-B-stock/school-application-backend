@@ -37,7 +37,8 @@
     "answers": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::answer.answer"
+      "target": "api::answer.answer",
+      "mappedBy": "reference"
     },
     "url": {
       "type": "string"
@@ -48,6 +49,18 @@
     },
     "applicant": {
       "type": "string"
+    },
+    "school_application": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::school-application.school-application",
+      "inversedBy": "references"
+    },
+    "staff_application": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::staff-application.staff-application",
+      "inversedBy": "references"
     }
   }
 }

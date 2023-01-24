@@ -31,6 +31,12 @@
       "relation": "manyToOne",
       "target": "api::staff-application.staff-application",
       "inversedBy": "answers"
+    },
+    "reference": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::reference.reference",
+      "inversedBy": "answers"
     }
   }
 }

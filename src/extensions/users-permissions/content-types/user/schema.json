@@ -86,11 +86,11 @@
         "audios"
       ]
     },
-    "address": {
+    "addresses": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::address.address",
-      "inversedBy": "user"
+      "mappedBy": "user"
     },
     "firstname": {
       "type": "string"
@@ -108,11 +108,6 @@
         "female",
         "other"
       ]
-    },
-    "emergency_address": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::address.address"
     },
     "staff_applications": {
       "type": "relation",

@@ -105,6 +105,16 @@ module.exports = (plugin) => {
 
   plugin.routes["content-api"].routes.unshift({
     method: "GET",
+    path: "/auth/enabled-providers",
+    handler: "auth.getEnabledProviders",
+    config: {
+      prefix: "",
+      //   auth: false,
+    },
+  });
+
+  plugin.routes["content-api"].routes.unshift({
+    method: "GET",
     path: "/users/staff",
     handler: "user.getStaff",
     config: {
@@ -113,15 +123,23 @@ module.exports = (plugin) => {
     },
   });
 
-  plugin.routes["content-api"].routes.unshift({
-    method: "GET",
-    path: "/auth/enabled-providers",
-    handler: "auth.getEnabledProviders",
-    config: {
-      prefix: "",
-      policies: [],
-    },
-  });
+  const findRoute = plugin.routes["content-api"].routes.find(
+    (route) => route.method === "GET" && route.path === "/users/:id"
+  );
+  const existingPolicies = findRoute.config.policies;
+  findRoute.config.policies = ["global::is-me-or-admin"];
+  if (existingPolicies) {
+    findRoute.config.policies.push(...existingPolicies);
+  }
+
+  const findOneRoute = plugin.routes["content-api"].routes.find(
+    (route) => route.method === "GET" && route.path === "/users"
+  );
+  const existingFindOnePolicies = findOneRoute.config.policies;
+  findOneRoute.config.policies = ["global::is-admin"];
+  if (existingFindOnePolicies) {
+    findOneRoute.config.policies.push(...existingFindOnePolicies);
+  }
 
   return plugin;
 };

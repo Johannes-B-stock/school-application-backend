@@ -35,9 +35,20 @@
     },
     "user": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "address"
+      "inversedBy": "addresses"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "main",
+        "emergency",
+        "secondary",
+        "old"
+      ],
+      "default": "main",
+      "required": true
     }
   }
 }

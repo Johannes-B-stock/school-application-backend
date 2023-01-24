@@ -1,26 +1,8 @@
 "use strict";
 
-const emailTemplate = {
-  subject: "Reference for <%= user.username %>",
-  text: `Hello <%= reference.name %>, 
-    You have been chosen as reference from <%= user.username %>.
-
-    Please click on this link to answer all questions that we have for you and answer all questions honestly: 
-    
-    <%= site.url %>/references/<%= reference.url %>
-
-    Be blessed,
-    <%= site.name %>
-    `,
-  html: `<h4>Hello <%= reference.name %>,</h4>
-      <p>You have been chosen as reference from <%= user.username %>.</p>
-      <p>Please click on this link to answer all questions that we have for you and answer all questions honestly: 
-        <br /> <br />
-      <%= reference.url %>
-    <br /> <br />
-      Be blessed, <br/>
-      <%= site.name %> </p>`,
-};
+const { isNotAdmin } = require("../../../common/utils");
+const utils = require("@strapi/utils");
+const { ForbiddenError } = utils.errors;
 
 /**
  *  reference controller
@@ -31,6 +13,26 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController(
   "api::reference.reference",
   ({ strapi }) => ({
+    async find(ctx) {
+      if (isNotAdmin(ctx)) {
+        if (!ctx.query.uid && !ctx.query.filters.uid) {
+          throw new ForbiddenError(
+            "If user is not admin then the uid has to be given to find a reference"
+          );
+        }
+        if (!ctx.query.filters.uid) {
+          ctx.query = {
+            ...ctx.query,
+            filters: {
+              ...ctx.query?.filters,
+              uid: { $eq: ctx.query.uid },
+            },
+          };
+        }
+      }
+      const found = await super.find(ctx);
+      return found;
+    },
     async create(ctx) {
       try {
         await strapi

@@ -44,15 +44,11 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "staff_applications"
     },
-    "reference1": {
+    "references": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::reference.reference"
-    },
-    "reference2": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::reference.reference"
+      "relation": "oneToMany",
+      "target": "api::reference.reference",
+      "mappedBy": "staff_application"
     },
     "step": {
       "type": "integer",

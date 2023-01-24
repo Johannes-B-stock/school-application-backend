@@ -22,6 +22,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -35,6 +38,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -108,36 +114,64 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "schools"
+      "inversedBy": "schools",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "staff": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::users-permissions.user",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "applications": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::school-application.school-application",
-      "mappedBy": "school"
+      "mappedBy": "school",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "applicationQuestions": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::question-collection.question-collection"
+      "target": "api::question-collection.question-collection",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "preApplicationText": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
     "referenceQuestions": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::question-collection.question-collection"
+      "target": "api::question-collection.question-collection",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "secondarySchool": {
       "type": "boolean",
@@ -176,6 +210,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "richtext"
@@ -193,6 +230,18 @@
         "USD"
       ],
       "default": "USD"
+    },
+    "referencesNeeded": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "default": 2,
+      "required": true,
+      "min": 0,
+      "max": 10
     }
   }
 }

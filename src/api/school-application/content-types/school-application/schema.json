@@ -45,15 +45,11 @@
       "type": "integer",
       "default": 0
     },
-    "reference1": {
+    "references": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::reference.reference"
-    },
-    "reference2": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::reference.reference"
+      "relation": "oneToMany",
+      "target": "api::reference.reference",
+      "mappedBy": "school_application"
     },
     "applicationFeePaid": {
       "type": "boolean",

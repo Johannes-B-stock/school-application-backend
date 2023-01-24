@@ -5,6 +5,7 @@
  */
 const utils = require("@strapi/utils");
 const { createCoreController } = require("@strapi/strapi").factories;
+const { isNotAdmin } = require("../../../common/utils");
 const { NotFoundError } = utils.errors;
 
 module.exports = createCoreController(
@@ -12,40 +13,38 @@ module.exports = createCoreController(
   ({ strapi }) => ({
     // find school applications
     async find(ctx) {
-      let query = ctx.query;
       if (isNotAdmin(ctx)) {
-        query = {
-          ...query,
+        ctx.query = {
+          ...ctx.query,
           filters: {
-            ...query.filters,
-            user: { id: ctx.state.user.id },
+            ...ctx.query?.filters,
+            user: { id: { $eq: ctx.state.user.id } },
           },
         };
       }
 
-      const applications = await super.find({ ...ctx, query });
+      const applications = await super.find(ctx);
       return applications;
     },
 
     async findOne(ctx) {
-      let query = ctx.query;
       if (isNotAdmin(ctx)) {
-        query = {
-          ...query,
+        ctx.query = {
+          ...ctx.query,
           filters: {
-            ...query.filters,
+            ...ctx.query?.filters,
             user: { id: ctx.state.user.id },
           },
         };
       }
-
-      const application = await super.findOne({ ...ctx, query });
+      const application = await super.findOne(ctx);
       return application;
     },
 
     // Create application that belongs to user----------------------------------------
     async create(ctx) {
       if (!ctx.state.user.id) {
+        return await super.create(ctx);
       }
       const application = await super.create(ctx);
 
@@ -62,6 +61,7 @@ module.exports = createCoreController(
         application.data.id,
       ];
 
+      // is this even working???
       const me = await strapi
         .controller("plugin::users-permissions.user")
         .updateMe({
@@ -132,9 +132,3 @@ module.exports = createCoreController(
     },
   })
 );
-function isNotAdmin(ctx) {
-  return (
-    ctx.state.user.role.name.toLowerCase() !== "schooladmin" &&
-    ctx.state.user.role.name.toLowerCase() !== "admin"
-  );
-}
