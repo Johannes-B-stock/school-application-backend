@@ -20,9 +20,9 @@
           "sortable": true
         }
       },
-      "questions": {
+      "applicationQuestions": {
         "edit": {
-          "label": "questions",
+          "label": "applicationQuestions",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -30,7 +30,7 @@
           "mainField": "name"
         },
         "list": {
-          "label": "questions",
+          "label": "applicationQuestions",
           "searchable": true,
           "sortable": true
         }
@@ -106,6 +106,20 @@
           "sortable": true
         }
       },
+      "referencesNeeded": {
+        "edit": {
+          "label": "referencesNeeded",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "referencesNeeded",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -138,9 +152,9 @@
     "layouts": {
       "list": [
         "id",
-        "questions",
         "cardImage",
-        "shortDescription"
+        "shortDescription",
+        "applicationQuestions"
       ],
       "edit": [
         [
@@ -163,15 +177,21 @@
           {
             "name": "allowApplications",
             "size": 4
-          },
-          {
-            "name": "questions",
-            "size": 6
           }
         ],
         [
           {
             "name": "referenceQuestions",
+            "size": 6
+          },
+          {
+            "name": "referencesNeeded",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "applicationQuestions",
             "size": 6
           }
         ]

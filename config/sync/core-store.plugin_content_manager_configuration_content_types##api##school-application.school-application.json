@@ -93,9 +93,9 @@
           "sortable": true
         }
       },
-      "reference1": {
+      "references": {
         "edit": {
-          "label": "reference1",
+          "label": "references",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -103,24 +103,9 @@
           "mainField": "name"
         },
         "list": {
-          "label": "reference1",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "reference2": {
-        "edit": {
-          "label": "reference2",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "name"
-        },
-        "list": {
-          "label": "reference2",
-          "searchable": true,
-          "sortable": true
+          "label": "references",
+          "searchable": false,
+          "sortable": false
         }
       },
       "applicationFeePaid": {
@@ -167,6 +152,13 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "school",
+        "step",
+        "createdAt",
+        "state"
+      ],
       "edit": [
         [
           {
@@ -200,22 +192,10 @@
         ],
         [
           {
-            "name": "reference1",
-            "size": 6
-          },
-          {
-            "name": "reference2",
+            "name": "references",
             "size": 6
           }
         ]
-      ],
-      "list": [
-        "id",
-        "school",
-        "step",
-        "createdAt",
-        "reference1",
-        "state"
       ]
     }
   },

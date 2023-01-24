@@ -333,6 +333,20 @@
           "sortable": true
         }
       },
+      "referencesNeeded": {
+        "edit": {
+          "label": "referencesNeeded",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "referencesNeeded",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -482,6 +496,10 @@
           {
             "name": "referenceQuestions",
             "size": 6
+          },
+          {
+            "name": "referencesNeeded",
+            "size": 4
           }
         ]
       ]

@@ -79,7 +79,8 @@
           "city",
           "country",
           "postalCode",
-          "user"
+          "user",
+          "type"
         ]
       },
       "conditions": []
@@ -108,7 +109,8 @@
           "city",
           "country",
           "postalCode",
-          "user"
+          "user",
+          "type"
         ]
       },
       "conditions": []
@@ -125,7 +127,8 @@
           "city",
           "country",
           "postalCode",
-          "user"
+          "user",
+          "type"
         ]
       },
       "conditions": []
@@ -138,7 +141,8 @@
           "answer",
           "school_application",
           "question",
-          "staff_application"
+          "staff_application",
+          "reference"
         ]
       },
       "conditions": []
@@ -163,7 +167,8 @@
           "answer",
           "school_application",
           "question",
-          "staff_application"
+          "staff_application",
+          "reference"
         ]
       },
       "conditions": []
@@ -176,7 +181,8 @@
           "answer",
           "school_application",
           "question",
-          "staff_application"
+          "staff_application",
+          "reference"
         ]
       },
       "conditions": []
@@ -568,7 +574,9 @@
           "answers",
           "url",
           "uid",
-          "applicant"
+          "applicant",
+          "school_application",
+          "staff_application"
         ]
       },
       "conditions": []
@@ -598,7 +606,9 @@
           "answers",
           "url",
           "uid",
-          "applicant"
+          "applicant",
+          "school_application",
+          "staff_application"
         ]
       },
       "conditions": []
@@ -616,7 +626,9 @@
           "answers",
           "url",
           "uid",
-          "applicant"
+          "applicant",
+          "school_application",
+          "staff_application"
         ]
       },
       "conditions": []
@@ -631,8 +643,7 @@
           "answers",
           "state",
           "step",
-          "reference1",
-          "reference2",
+          "references",
           "applicationFeePaid"
         ]
       },
@@ -660,8 +671,7 @@
           "answers",
           "state",
           "step",
-          "reference1",
-          "reference2",
+          "references",
           "applicationFeePaid"
         ]
       },
@@ -677,8 +687,7 @@
           "answers",
           "state",
           "step",
-          "reference1",
-          "reference2",
+          "references",
           "applicationFeePaid"
         ]
       },
@@ -710,7 +719,8 @@
           "stripeAppFeeId",
           "stripeSchoolFeeId",
           "detailedDescription",
-          "currency"
+          "currency",
+          "referencesNeeded"
         ],
         "locales": [
           "en",
@@ -767,7 +777,8 @@
           "stripeAppFeeId",
           "stripeSchoolFeeId",
           "detailedDescription",
-          "currency"
+          "currency",
+          "referencesNeeded"
         ],
         "locales": [
           "en",
@@ -802,7 +813,8 @@
           "stripeAppFeeId",
           "stripeSchoolFeeId",
           "detailedDescription",
-          "currency"
+          "currency",
+          "referencesNeeded"
         ],
         "locales": [
           "en",
@@ -816,12 +828,13 @@
       "subject": "api::staff-application-setting.staff-application-setting",
       "properties": {
         "fields": [
-          "questions",
+          "applicationQuestions",
           "cardImage",
           "shortDescription",
           "details",
           "allowApplications",
-          "referenceQuestions"
+          "referenceQuestions",
+          "referencesNeeded"
         ],
         "locales": [
           "en",
@@ -857,12 +870,13 @@
       "subject": "api::staff-application-setting.staff-application-setting",
       "properties": {
         "fields": [
-          "questions",
+          "applicationQuestions",
           "cardImage",
           "shortDescription",
           "details",
           "allowApplications",
-          "referenceQuestions"
+          "referenceQuestions",
+          "referencesNeeded"
         ],
         "locales": [
           "en",
@@ -876,12 +890,13 @@
       "subject": "api::staff-application-setting.staff-application-setting",
       "properties": {
         "fields": [
-          "questions",
+          "applicationQuestions",
           "cardImage",
           "shortDescription",
           "details",
           "allowApplications",
-          "referenceQuestions"
+          "referenceQuestions",
+          "referencesNeeded"
         ],
         "locales": [
           "en",
@@ -901,8 +916,7 @@
           "state",
           "submittedAt",
           "user",
-          "reference1",
-          "reference2",
+          "references",
           "step"
         ]
       },
@@ -931,8 +945,7 @@
           "state",
           "submittedAt",
           "user",
-          "reference1",
-          "reference2",
+          "references",
           "step"
         ]
       },
@@ -949,8 +962,7 @@
           "state",
           "submittedAt",
           "user",
-          "reference1",
-          "reference2",
+          "references",
           "step"
         ]
       },
@@ -1231,12 +1243,11 @@
           "schools",
           "school_applications",
           "picture",
-          "address",
+          "addresses",
           "firstname",
           "lastname",
           "birthday",
           "gender",
-          "emergency_address",
           "staff_applications",
           "details",
           "middle_names"
@@ -1267,12 +1278,11 @@
           "schools",
           "school_applications",
           "picture",
-          "address",
+          "addresses",
           "firstname",
           "lastname",
           "birthday",
           "gender",
-          "emergency_address",
           "staff_applications",
           "details",
           "middle_names"
@@ -1297,12 +1307,11 @@
           "schools",
           "school_applications",
           "picture",
-          "address",
+          "addresses",
           "firstname",
           "lastname",
           "birthday",
           "gender",
-          "emergency_address",
           "staff_applications",
           "details",
           "middle_names"

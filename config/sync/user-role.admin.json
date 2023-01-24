@@ -316,6 +316,9 @@
       "action": "plugin::users-permissions.auth.forgotPassword"
     },
     {
+      "action": "plugin::users-permissions.auth.getEnabledProviders"
+    },
+    {
       "action": "plugin::users-permissions.auth.register"
     },
     {

@@ -25,6 +25,12 @@
       "action": "api::privacy.privacy.find"
     },
     {
+      "action": "api::question-collection.question-collection.find"
+    },
+    {
+      "action": "api::question-collection.question-collection.findOne"
+    },
+    {
       "action": "api::question.question.find"
     },
     {
@@ -76,10 +82,10 @@
       "action": "plugin::users-permissions.auth.forgotPassword"
     },
     {
-      "action": "plugin::users-permissions.auth.register"
+      "action": "plugin::users-permissions.auth.getEnabledProviders"
     },
     {
-      "action": "plugin::users-permissions.auth.resetPassword"
+      "action": "plugin::users-permissions.auth.register"
     },
     {
       "action": "plugin::users-permissions.auth.sendEmailConfirmation"

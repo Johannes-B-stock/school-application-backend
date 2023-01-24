@@ -79,6 +79,21 @@
           "sortable": true
         }
       },
+      "reference": {
+        "edit": {
+          "label": "reference",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "reference",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -113,6 +128,7 @@
         "id",
         "answer",
         "school_application",
+        "staff_application",
         "createdAt"
       ],
       "edit": [
@@ -133,6 +149,12 @@
           },
           {
             "name": "staff_application",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "reference",
             "size": 6
           }
         ]

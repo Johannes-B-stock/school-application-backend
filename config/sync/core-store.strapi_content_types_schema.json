@@ -1770,11 +1770,11 @@
             "audios"
           ]
         },
-        "address": {
+        "addresses": {
           "type": "relation",
-          "relation": "oneToOne",
+          "relation": "oneToMany",
           "target": "api::address.address",
-          "inversedBy": "user"
+          "mappedBy": "user"
         },
         "firstname": {
           "type": "string"
@@ -1792,11 +1792,6 @@
             "female",
             "other"
           ]
-        },
-        "emergency_address": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::address.address"
         },
         "staff_applications": {
           "type": "relation",
@@ -1942,11 +1937,11 @@
               "audios"
             ]
           },
-          "address": {
+          "addresses": {
             "type": "relation",
-            "relation": "oneToOne",
+            "relation": "oneToMany",
             "target": "api::address.address",
-            "inversedBy": "user"
+            "mappedBy": "user"
           },
           "firstname": {
             "type": "string"
@@ -1964,11 +1959,6 @@
               "female",
               "other"
             ]
-          },
-          "emergency_address": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::address.address"
           },
           "staff_applications": {
             "type": "relation",
@@ -3139,9 +3129,20 @@
         },
         "user": {
           "type": "relation",
-          "relation": "oneToOne",
+          "relation": "manyToOne",
           "target": "plugin::users-permissions.user",
-          "mappedBy": "address"
+          "inversedBy": "addresses"
+        },
+        "type": {
+          "type": "enumeration",
+          "enum": [
+            "main",
+            "emergency",
+            "secondary",
+            "old"
+          ],
+          "default": "main",
+          "required": true
         },
         "createdAt": {
           "type": "datetime"
@@ -3212,9 +3213,20 @@
           },
           "user": {
             "type": "relation",
-            "relation": "oneToOne",
+            "relation": "manyToOne",
             "target": "plugin::users-permissions.user",
-            "mappedBy": "address"
+            "inversedBy": "addresses"
+          },
+          "type": {
+            "type": "enumeration",
+            "enum": [
+              "main",
+              "emergency",
+              "secondary",
+              "old"
+            ],
+            "default": "main",
+            "required": true
           }
         },
         "kind": "collectionType"
@@ -3260,6 +3272,12 @@
           "type": "relation",
           "relation": "manyToOne",
           "target": "api::staff-application.staff-application",
+          "inversedBy": "answers"
+        },
+        "reference": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::reference.reference",
           "inversedBy": "answers"
         },
         "createdAt": {
@@ -3326,6 +3344,12 @@
             "type": "relation",
             "relation": "manyToOne",
             "target": "api::staff-application.staff-application",
+            "inversedBy": "answers"
+          },
+          "reference": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::reference.reference",
             "inversedBy": "answers"
           }
         },
@@ -4279,7 +4303,8 @@
         "answers": {
           "type": "relation",
           "relation": "oneToMany",
-          "target": "api::answer.answer"
+          "target": "api::answer.answer",
+          "mappedBy": "reference"
         },
         "url": {
           "type": "string"
@@ -4290,6 +4315,18 @@
         },
         "applicant": {
           "type": "string"
+        },
+        "school_application": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::school-application.school-application",
+          "inversedBy": "references"
+        },
+        "staff_application": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::staff-application.staff-application",
+          "inversedBy": "references"
         },
         "createdAt": {
           "type": "datetime"
@@ -4362,7 +4399,8 @@
           "answers": {
             "type": "relation",
             "relation": "oneToMany",
-            "target": "api::answer.answer"
+            "target": "api::answer.answer",
+            "mappedBy": "reference"
           },
           "url": {
             "type": "string"
@@ -4373,6 +4411,18 @@
           },
           "applicant": {
             "type": "string"
+          },
+          "school_application": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::school-application.school-application",
+            "inversedBy": "references"
+          },
+          "staff_application": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::staff-application.staff-application",
+            "inversedBy": "references"
           }
         },
         "kind": "collectionType"
@@ -4410,6 +4460,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -4423,6 +4476,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -4496,36 +4552,64 @@
           "type": "relation",
           "relation": "manyToMany",
           "target": "plugin::users-permissions.user",
-          "inversedBy": "schools"
+          "inversedBy": "schools",
+          "pluginOptions": {
+            "deepl": {
+              "translate": "translate"
+            }
+          }
         },
         "staff": {
           "type": "relation",
           "relation": "oneToMany",
-          "target": "plugin::users-permissions.user"
+          "target": "plugin::users-permissions.user",
+          "pluginOptions": {
+            "deepl": {
+              "translate": "translate"
+            }
+          }
         },
         "applications": {
           "type": "relation",
           "relation": "oneToMany",
           "target": "api::school-application.school-application",
-          "mappedBy": "school"
+          "mappedBy": "school",
+          "pluginOptions": {
+            "deepl": {
+              "translate": "translate"
+            }
+          }
         },
         "applicationQuestions": {
           "type": "relation",
           "relation": "oneToOne",
-          "target": "api::question-collection.question-collection"
+          "target": "api::question-collection.question-collection",
+          "pluginOptions": {
+            "deepl": {
+              "translate": "translate"
+            }
+          }
         },
         "preApplicationText": {
           "type": "richtext",
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
         "referenceQuestions": {
           "type": "relation",
           "relation": "oneToOne",
-          "target": "api::question-collection.question-collection"
+          "target": "api::question-collection.question-collection",
+          "pluginOptions": {
+            "deepl": {
+              "translate": "translate"
+            }
+          }
         },
         "secondarySchool": {
           "type": "boolean",
@@ -4564,6 +4648,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           },
           "type": "richtext"
@@ -4581,6 +4668,18 @@
             "USD"
           ],
           "default": "USD"
+        },
+        "referencesNeeded": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          },
+          "type": "integer",
+          "default": 2,
+          "required": true,
+          "min": 0,
+          "max": 10
         },
         "createdAt": {
           "type": "datetime"
@@ -4654,6 +4753,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -4667,6 +4769,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -4740,36 +4845,64 @@
             "type": "relation",
             "relation": "manyToMany",
             "target": "plugin::users-permissions.user",
-            "inversedBy": "schools"
+            "inversedBy": "schools",
+            "pluginOptions": {
+              "deepl": {
+                "translate": "translate"
+              }
+            }
           },
           "staff": {
             "type": "relation",
             "relation": "oneToMany",
-            "target": "plugin::users-permissions.user"
+            "target": "plugin::users-permissions.user",
+            "pluginOptions": {
+              "deepl": {
+                "translate": "translate"
+              }
+            }
           },
           "applications": {
             "type": "relation",
             "relation": "oneToMany",
             "target": "api::school-application.school-application",
-            "mappedBy": "school"
+            "mappedBy": "school",
+            "pluginOptions": {
+              "deepl": {
+                "translate": "translate"
+              }
+            }
           },
           "applicationQuestions": {
             "type": "relation",
             "relation": "oneToOne",
-            "target": "api::question-collection.question-collection"
+            "target": "api::question-collection.question-collection",
+            "pluginOptions": {
+              "deepl": {
+                "translate": "translate"
+              }
+            }
           },
           "preApplicationText": {
             "type": "richtext",
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
           "referenceQuestions": {
             "type": "relation",
             "relation": "oneToOne",
-            "target": "api::question-collection.question-collection"
+            "target": "api::question-collection.question-collection",
+            "pluginOptions": {
+              "deepl": {
+                "translate": "translate"
+              }
+            }
           },
           "secondarySchool": {
             "type": "boolean",
@@ -4808,6 +4941,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             },
             "type": "richtext"
@@ -4825,6 +4961,18 @@
               "USD"
             ],
             "default": "USD"
+          },
+          "referencesNeeded": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            },
+            "type": "integer",
+            "default": 2,
+            "required": true,
+            "min": 0,
+            "max": 10
           }
         },
         "kind": "collectionType"
@@ -4885,15 +5033,11 @@
           "type": "integer",
           "default": 0
         },
-        "reference1": {
+        "references": {
           "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::reference.reference"
-        },
-        "reference2": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::reference.reference"
+          "relation": "oneToMany",
+          "target": "api::reference.reference",
+          "mappedBy": "school_application"
         },
         "applicationFeePaid": {
           "type": "boolean",
@@ -4979,15 +5123,11 @@
             "type": "integer",
             "default": 0
           },
-          "reference1": {
+          "references": {
             "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::reference.reference"
-          },
-          "reference2": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::reference.reference"
+            "relation": "oneToMany",
+            "target": "api::reference.reference",
+            "mappedBy": "school_application"
           },
           "applicationFeePaid": {
             "type": "boolean",
@@ -5052,15 +5192,11 @@
           "target": "plugin::users-permissions.user",
           "inversedBy": "staff_applications"
         },
-        "reference1": {
+        "references": {
           "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::reference.reference"
-        },
-        "reference2": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::reference.reference"
+          "relation": "oneToMany",
+          "target": "api::reference.reference",
+          "mappedBy": "staff_application"
         },
         "step": {
           "type": "integer",
@@ -5147,15 +5283,11 @@
             "target": "plugin::users-permissions.user",
             "inversedBy": "staff_applications"
           },
-          "reference1": {
+          "references": {
             "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::reference.reference"
-          },
-          "reference2": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::reference.reference"
+            "relation": "oneToMany",
+            "target": "api::reference.reference",
+            "mappedBy": "staff_application"
           },
           "step": {
             "type": "integer",
@@ -5194,10 +5326,15 @@
         }
       },
       "attributes": {
-        "questions": {
+        "applicationQuestions": {
           "type": "relation",
           "relation": "oneToOne",
-          "target": "api::question-collection.question-collection"
+          "target": "api::question-collection.question-collection",
+          "pluginOptions": {
+            "deepl": {
+              "translate": "translate"
+            }
+          }
         },
         "cardImage": {
           "type": "media",
@@ -5212,6 +5349,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -5220,6 +5360,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -5228,6 +5371,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -5242,7 +5388,24 @@
         "referenceQuestions": {
           "type": "relation",
           "relation": "oneToOne",
-          "target": "api::question-collection.question-collection"
+          "target": "api::question-collection.question-collection",
+          "pluginOptions": {
+            "deepl": {
+              "translate": "translate"
+            }
+          }
+        },
+        "referencesNeeded": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          },
+          "type": "integer",
+          "min": 0,
+          "max": 10,
+          "default": 2,
+          "required": true
         },
         "createdAt": {
           "type": "datetime"
@@ -5310,10 +5473,15 @@
           }
         },
         "attributes": {
-          "questions": {
+          "applicationQuestions": {
             "type": "relation",
             "relation": "oneToOne",
-            "target": "api::question-collection.question-collection"
+            "target": "api::question-collection.question-collection",
+            "pluginOptions": {
+              "deepl": {
+                "translate": "translate"
+              }
+            }
           },
           "cardImage": {
             "type": "media",
@@ -5328,6 +5496,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -5336,6 +5507,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -5344,6 +5518,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -5358,7 +5535,24 @@
           "referenceQuestions": {
             "type": "relation",
             "relation": "oneToOne",
-            "target": "api::question-collection.question-collection"
+            "target": "api::question-collection.question-collection",
+            "pluginOptions": {
+              "deepl": {
+                "translate": "translate"
+              }
+            }
+          },
+          "referencesNeeded": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            },
+            "type": "integer",
+            "min": 0,
+            "max": 10,
+            "default": 2,
+            "required": true
           }
         },
         "kind": "singleType"
@@ -5414,7 +5608,7 @@
           "type": "relation",
           "relation": "oneToOne",
           "target": "plugin::users-permissions.user",
-          "inversedBy": "details"
+          "mappedBy": "details"
         },
         "createdAt": {
           "type": "datetime"
@@ -5484,7 +5678,7 @@
             "type": "relation",
             "relation": "oneToOne",
             "target": "plugin::users-permissions.user",
-            "inversedBy": "details"
+            "mappedBy": "details"
           }
         },
         "kind": "collectionType"

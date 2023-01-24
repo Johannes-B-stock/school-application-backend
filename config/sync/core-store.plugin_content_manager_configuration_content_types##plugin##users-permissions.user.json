@@ -191,9 +191,9 @@
           "sortable": false
         }
       },
-      "address": {
+      "addresses": {
         "edit": {
-          "label": "address",
+          "label": "addresses",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -201,9 +201,9 @@
           "mainField": "firstname"
         },
         "list": {
-          "label": "address",
-          "searchable": true,
-          "sortable": true
+          "label": "addresses",
+          "searchable": false,
+          "sortable": false
         }
       },
       "firstname": {
@@ -258,21 +258,6 @@
         },
         "list": {
           "label": "gender",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "emergency_address": {
-        "edit": {
-          "label": "emergency_address",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "firstname"
-        },
-        "list": {
-          "label": "emergency_address",
           "searchable": true,
           "sortable": true
         }
@@ -354,6 +339,7 @@
       "list": [
         "id",
         "username",
+        "createdAt",
         "email",
         "confirmed"
       ],
@@ -430,21 +416,17 @@
         ],
         [
           {
-            "name": "address",
-            "size": 6
-          },
-          {
-            "name": "emergency_address",
-            "size": 6
-          }
-        ],
-        [
-          {
             "name": "staff_applications",
             "size": 6
           },
           {
             "name": "details",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "addresses",
             "size": 6
           }
         ]

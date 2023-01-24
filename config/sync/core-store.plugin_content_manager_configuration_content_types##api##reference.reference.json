@@ -147,6 +147,36 @@
           "sortable": true
         }
       },
+      "school_application": {
+        "edit": {
+          "label": "school_application",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "id"
+        },
+        "list": {
+          "label": "school_application",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "staff_application": {
+        "edit": {
+          "label": "staff_application",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "id"
+        },
+        "list": {
+          "label": "staff_application",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -177,12 +207,6 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "name",
-        "relation",
-        "email"
-      ],
       "edit": [
         [
           {
@@ -228,8 +252,25 @@
           {
             "name": "answers",
             "size": 6
+          },
+          {
+            "name": "school_application",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "staff_application",
+            "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "name",
+        "relation",
+        "createdAt",
+        "email"
       ]
     }
   },
