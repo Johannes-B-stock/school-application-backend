@@ -347,6 +347,20 @@
           "sortable": true
         }
       },
+      "outreachFee": {
+        "edit": {
+          "label": "outreachFee",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "outreachFee",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -500,6 +514,12 @@
           {
             "name": "referencesNeeded",
             "size": 4
+          }
+        ],
+        [
+          {
+            "name": "outreachFee",
+            "size": 6
           }
         ]
       ]

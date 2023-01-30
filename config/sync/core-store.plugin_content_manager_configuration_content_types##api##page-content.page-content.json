@@ -132,6 +132,76 @@
           "sortable": true
         }
       },
+      "pageTitle": {
+        "edit": {
+          "label": "pageTitle",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pageTitle",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "pageDescription": {
+        "edit": {
+          "label": "pageDescription",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pageDescription",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "pageKeywords": {
+        "edit": {
+          "label": "pageKeywords",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pageKeywords",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "footerText": {
+        "edit": {
+          "label": "footerText",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "footerText",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "tiktokLink": {
+        "edit": {
+          "label": "tiktokLink",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "tiktokLink",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -206,6 +276,34 @@
           },
           {
             "name": "instagramLink",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pageTitle",
+            "size": 6
+          },
+          {
+            "name": "pageDescription",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pageKeywords",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "footerText",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "tiktokLink",
             "size": 6
           }
         ]

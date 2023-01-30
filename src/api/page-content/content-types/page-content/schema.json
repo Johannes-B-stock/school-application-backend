@@ -29,6 +29,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -45,6 +48,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -53,6 +59,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -61,6 +70,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -68,6 +80,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "text"
@@ -76,6 +91,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "string"
@@ -84,6 +102,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "string"
@@ -92,6 +113,66 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string"
+    },
+    "pageTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "default": "Y-Apply"
+    },
+    "pageDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "default": "Apply for schools and manage your schools"
+    },
+    "pageKeywords": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "default": "ywam, school application, base, university"
+    },
+    "footerText": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "richtext",
+      "default": "©Y-Apply",
+      "required": false
+    },
+    "tiktokLink": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
         }
       },
       "type": "string"

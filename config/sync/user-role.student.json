@@ -46,10 +46,37 @@
       "action": "api::question-collection.question-collection.findOne"
     },
     {
+      "action": "api::question.question.find"
+    },
+    {
+      "action": "api::question.question.findOne"
+    },
+    {
+      "action": "api::reference.reference.create"
+    },
+    {
+      "action": "api::reference.reference.find"
+    },
+    {
+      "action": "api::reference.reference.findOne"
+    },
+    {
+      "action": "api::reference.reference.update"
+    },
+    {
       "action": "api::school-application.school-application.create"
     },
     {
+      "action": "api::school-application.school-application.find"
+    },
+    {
+      "action": "api::school-application.school-application.findOne"
+    },
+    {
       "action": "api::school-application.school-application.me"
+    },
+    {
+      "action": "api::school-application.school-application.update"
     },
     {
       "action": "api::school.school.find"
@@ -67,10 +94,25 @@
       "action": "api::staff-application.staff-application.delete"
     },
     {
+      "action": "api::staff-application.staff-application.find"
+    },
+    {
+      "action": "api::staff-application.staff-application.findOne"
+    },
+    {
       "action": "api::staff-application.staff-application.me"
     },
     {
       "action": "api::staff-application.staff-application.update"
+    },
+    {
+      "action": "api::user-detail.user-detail.createMe"
+    },
+    {
+      "action": "api::user-detail.user-detail.findMe"
+    },
+    {
+      "action": "api::user-detail.user-detail.updateMe"
     },
     {
       "action": "plugin::upload.content-api.upload"

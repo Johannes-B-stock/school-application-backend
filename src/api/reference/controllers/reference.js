@@ -35,6 +35,12 @@ module.exports = createCoreController(
     },
     async create(ctx) {
       try {
+        const pageContent = await strapi.entityService.findMany(
+          "api::page-content.page-content"
+        );
+
+        const siteName = pageContent.pageTitle;
+
         await strapi
           .plugin("email-designer")
           .service("email")
@@ -53,10 +59,10 @@ module.exports = createCoreController(
               reference: ctx.request.body.data,
               url: ctx.request.body.data.url,
               site: {
-                name: "Y-Apply School Applications",
+                name: siteName,
               },
               SITE: {
-                name: "Y-Apply School Applications",
+                name: siteName,
               },
             }
           );
@@ -67,19 +73,6 @@ module.exports = createCoreController(
         strapi.log.debug("📺: ", err);
         return ctx.badRequest(null, err);
       }
-
-      // await strapi.plugins["email"].services.email.sendTemplatedEmail(
-      //   {
-      //     to: reference.data.attributes.email,
-      //     // from: is not specified, so it's the defaultFrom that will be used instead
-      //   },
-      //   emailTemplate,
-      //   {
-      //     user: ctx.state.user,
-      //     reference: reference.data.attributes,
-      //     site: { name: "School Application Page" },
-      //   }
-      // );
     },
   })
 );

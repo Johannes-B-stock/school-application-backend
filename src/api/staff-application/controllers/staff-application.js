@@ -15,7 +15,7 @@ module.exports = createCoreController(
     // find staff applications
     async find(ctx) {
       let query = ctx.query;
-      if (ctx.state.user.role.name.toLowerCase() !== "admin") {
+      if (!isAdmin(ctx)) {
         query = {
           ...query,
           filters: {
@@ -26,6 +26,25 @@ module.exports = createCoreController(
       }
 
       return await super.find({ ...ctx, query });
+    },
+
+    async findOne(ctx) {
+      if (!isAdmin(ctx)) {
+        const query = {
+          populate: "user",
+        };
+        const application = await strapi.entityService.findOne(
+          "api::staff-application.staff-application",
+          ctx.params.id,
+          query
+        );
+        if (application.user.id !== ctx.state.user.id) {
+          throw new ForbiddenError(
+            "Only admins can see other applications then their own."
+          );
+        }
+      }
+      return await super.findOne(ctx);
     },
     // Create application that belongs to user----------------------------------------
     async create(ctx) {
@@ -43,34 +62,48 @@ module.exports = createCoreController(
       if (!ctx.state.user) {
         return 403;
       }
-      const { id } = ctx.params;
-      const query = {
-        ...ctx.query,
-        filters: {
-          ...ctx.query?.filters,
-          id: id,
-        },
-        populate: {
-          user: "*",
-        },
-      };
-      if (!isAdmin(ctx)) {
-        query.filters = {
-          user: { id: { $eq: ctx.state.user.id } },
-        };
-      }
-      const applications = await this.find({ ...ctx, query: query });
-      if (!applications.data || !applications.data.length) {
+
+      const application = await this.findOne({
+        ...ctx,
+        query: { ...ctx.query, populate: { user: { populate: "role" } } },
+      });
+      if (!application?.data) {
         return ctx.unauthorized(`You can't update this entry`);
       }
-      const application = applications.data[0];
       if (
-        application.attributes.state !== "submitted" &&
+        application.data.attributes.state !== "submitted" &&
         ctx.request.body?.data?.state === "submitted"
       ) {
         ctx.request.body.data.submittedAt = new Date().getTime();
+      }
+      if (
+        application.data.attributes.state !== "approved" &&
+        ctx.request.body?.data?.state === "approved"
+      ) {
+        ctx.request.body.data.approvedAt = new Date().getTime();
 
-        // update user and switch role to staff
+        const user = application.data.attributes.user?.data;
+
+        if (
+          user.attributes.role.data.attributes.name.toLowerCase() === "user" ||
+          user.attributes.role.data.attributes.name.toLowerCase() === "student"
+        ) {
+          // update user and switch role to staff
+
+          const roles = await strapi.entityService.findMany(
+            "plugin::users-permissions.role"
+          );
+
+          const staffRole = roles.find(
+            (role) => role.name.toLowerCase() === "staff"
+          );
+
+          await strapi.entityService.update(
+            "plugin::users-permissions.user",
+            user.id,
+            { data: { role: staffRole.id } }
+          );
+        }
       }
 
       return await super.update(ctx);

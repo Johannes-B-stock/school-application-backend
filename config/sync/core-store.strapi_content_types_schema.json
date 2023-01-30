@@ -3499,6 +3499,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -3515,6 +3518,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -3523,6 +3529,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -3531,6 +3540,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           }
         },
@@ -3538,6 +3550,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           },
           "type": "text"
@@ -3546,6 +3561,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           },
           "type": "string"
@@ -3554,6 +3572,9 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
             }
           },
           "type": "string"
@@ -3562,6 +3583,66 @@
           "pluginOptions": {
             "i18n": {
               "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
+            }
+          },
+          "type": "string"
+        },
+        "pageTitle": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
+            }
+          },
+          "type": "string",
+          "default": "Y-Apply"
+        },
+        "pageDescription": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
+            }
+          },
+          "type": "string",
+          "default": "Apply for schools and manage your schools"
+        },
+        "pageKeywords": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
+            }
+          },
+          "type": "string",
+          "default": "ywam, school application, base, university"
+        },
+        "footerText": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
+            }
+          },
+          "type": "richtext",
+          "default": "©Y-Apply",
+          "required": false
+        },
+        "tiktokLink": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": false
             }
           },
           "type": "string"
@@ -3645,6 +3726,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -3661,6 +3745,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -3669,6 +3756,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -3677,6 +3767,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             }
           },
@@ -3684,6 +3777,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             },
             "type": "text"
@@ -3692,6 +3788,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             },
             "type": "string"
@@ -3700,6 +3799,9 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
               }
             },
             "type": "string"
@@ -3708,6 +3810,66 @@
             "pluginOptions": {
               "i18n": {
                 "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
+              }
+            },
+            "type": "string"
+          },
+          "pageTitle": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
+              }
+            },
+            "type": "string",
+            "default": "Y-Apply"
+          },
+          "pageDescription": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
+              }
+            },
+            "type": "string",
+            "default": "Apply for schools and manage your schools"
+          },
+          "pageKeywords": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
+              }
+            },
+            "type": "string",
+            "default": "ywam, school application, base, university"
+          },
+          "footerText": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
+              }
+            },
+            "type": "richtext",
+            "default": "©Y-Apply",
+            "required": false
+          },
+          "tiktokLink": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": false
               }
             },
             "type": "string"
@@ -4573,12 +4735,12 @@
           "type": "relation",
           "relation": "oneToMany",
           "target": "api::school-application.school-application",
-          "mappedBy": "school",
           "pluginOptions": {
             "deepl": {
               "translate": "translate"
             }
-          }
+          },
+          "mappedBy": "school"
         },
         "applicationQuestions": {
           "type": "relation",
@@ -4680,6 +4842,17 @@
           "required": true,
           "min": 0,
           "max": 10
+        },
+        "outreachFee": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            },
+            "deepl": {
+              "translate": "translate"
+            }
+          },
+          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -4866,12 +5039,12 @@
             "type": "relation",
             "relation": "oneToMany",
             "target": "api::school-application.school-application",
-            "mappedBy": "school",
             "pluginOptions": {
               "deepl": {
                 "translate": "translate"
               }
-            }
+            },
+            "mappedBy": "school"
           },
           "applicationQuestions": {
             "type": "relation",
@@ -4973,6 +5146,17 @@
             "required": true,
             "min": 0,
             "max": 10
+          },
+          "outreachFee": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              },
+              "deepl": {
+                "translate": "translate"
+              }
+            },
+            "type": "string"
           }
         },
         "kind": "collectionType"
@@ -5023,6 +5207,7 @@
           "enum": [
             "created",
             "submitted",
+            "reviewing",
             "reviewed",
             "approved",
             "revoked"
@@ -5043,6 +5228,12 @@
           "type": "boolean",
           "default": false,
           "required": false
+        },
+        "submittedAt": {
+          "type": "datetime"
+        },
+        "approvedAt": {
+          "type": "datetime"
         },
         "createdAt": {
           "type": "datetime"
@@ -5113,6 +5304,7 @@
             "enum": [
               "created",
               "submitted",
+              "reviewing",
               "reviewed",
               "approved",
               "revoked"
@@ -5133,6 +5325,12 @@
             "type": "boolean",
             "default": false,
             "required": false
+          },
+          "submittedAt": {
+            "type": "datetime"
+          },
+          "approvedAt": {
+            "type": "datetime"
           }
         },
         "kind": "collectionType"
@@ -5178,6 +5376,7 @@
             "created",
             "submitted",
             "reviewed",
+            "reviewing",
             "approved",
             "revoked"
           ],
@@ -5204,6 +5403,9 @@
           "required": false,
           "max": 4,
           "min": 0
+        },
+        "approvedAt": {
+          "type": "datetime"
         },
         "createdAt": {
           "type": "datetime"
@@ -5269,6 +5471,7 @@
               "created",
               "submitted",
               "reviewed",
+              "reviewing",
               "approved",
               "revoked"
             ],
@@ -5295,6 +5498,9 @@
             "required": false,
             "max": 4,
             "min": 0
+          },
+          "approvedAt": {
+            "type": "datetime"
           }
         },
         "kind": "collectionType"

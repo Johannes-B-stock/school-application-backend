@@ -30,6 +30,7 @@
         "created",
         "submitted",
         "reviewed",
+        "reviewing",
         "approved",
         "revoked"
       ],
@@ -56,6 +57,9 @@
       "required": false,
       "max": 4,
       "min": 0
+    },
+    "approvedAt": {
+      "type": "datetime"
     }
   }
 }

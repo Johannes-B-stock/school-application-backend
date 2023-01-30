@@ -242,6 +242,17 @@
       "required": true,
       "min": 0,
       "max": 10
+    },
+    "outreachFee": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string"
     }
   }
 }

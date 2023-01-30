@@ -122,6 +122,34 @@
           "sortable": true
         }
       },
+      "submittedAt": {
+        "edit": {
+          "label": "submittedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "submittedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "approvedAt": {
+        "edit": {
+          "label": "approvedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "approvedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -193,6 +221,16 @@
         [
           {
             "name": "references",
+            "size": 6
+          },
+          {
+            "name": "submittedAt",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "approvedAt",
             "size": 6
           }
         ]

@@ -252,7 +252,12 @@
           "contact",
           "facebookLink",
           "twitterLink",
-          "instagramLink"
+          "instagramLink",
+          "pageTitle",
+          "pageDescription",
+          "pageKeywords",
+          "footerText",
+          "tiktokLink"
         ],
         "locales": [
           "en",
@@ -295,7 +300,12 @@
           "contact",
           "facebookLink",
           "twitterLink",
-          "instagramLink"
+          "instagramLink",
+          "pageTitle",
+          "pageDescription",
+          "pageKeywords",
+          "footerText",
+          "tiktokLink"
         ],
         "locales": [
           "en",
@@ -316,7 +326,12 @@
           "contact",
           "facebookLink",
           "twitterLink",
-          "instagramLink"
+          "instagramLink",
+          "pageTitle",
+          "pageDescription",
+          "pageKeywords",
+          "footerText",
+          "tiktokLink"
         ],
         "locales": [
           "en",
@@ -644,7 +659,9 @@
           "state",
           "step",
           "references",
-          "applicationFeePaid"
+          "applicationFeePaid",
+          "submittedAt",
+          "approvedAt"
         ]
       },
       "conditions": []
@@ -672,7 +689,9 @@
           "state",
           "step",
           "references",
-          "applicationFeePaid"
+          "applicationFeePaid",
+          "submittedAt",
+          "approvedAt"
         ]
       },
       "conditions": []
@@ -688,7 +707,9 @@
           "state",
           "step",
           "references",
-          "applicationFeePaid"
+          "applicationFeePaid",
+          "submittedAt",
+          "approvedAt"
         ]
       },
       "conditions": []
@@ -720,7 +741,8 @@
           "stripeSchoolFeeId",
           "detailedDescription",
           "currency",
-          "referencesNeeded"
+          "referencesNeeded",
+          "outreachFee"
         ],
         "locales": [
           "en",
@@ -778,7 +800,8 @@
           "stripeSchoolFeeId",
           "detailedDescription",
           "currency",
-          "referencesNeeded"
+          "referencesNeeded",
+          "outreachFee"
         ],
         "locales": [
           "en",
@@ -814,7 +837,8 @@
           "stripeSchoolFeeId",
           "detailedDescription",
           "currency",
-          "referencesNeeded"
+          "referencesNeeded",
+          "outreachFee"
         ],
         "locales": [
           "en",
@@ -917,7 +941,8 @@
           "submittedAt",
           "user",
           "references",
-          "step"
+          "step",
+          "approvedAt"
         ]
       },
       "conditions": []
@@ -946,7 +971,8 @@
           "submittedAt",
           "user",
           "references",
-          "step"
+          "step",
+          "approvedAt"
         ]
       },
       "conditions": []
@@ -963,7 +989,8 @@
           "submittedAt",
           "user",
           "references",
-          "step"
+          "step",
+          "approvedAt"
         ]
       },
       "conditions": []
